@@ -4,63 +4,29 @@
  */
 package Clientes;
 
+import Personas.Persona;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Cliente {
-    private String cedula;
-    private String nombre;
-    private LocalDate fechaNacimiento;
-    private String telefono;
-    private String correo;
-
+/**
+ *
+ * @author PC
+ */
+public class Cliente extends Persona{
+    
     public Cliente(String cedula, String nombre, LocalDate fechaNacimiento, String telefono, String correo) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
-        this.telefono = telefono;
-        this.correo = correo;
+        super(cedula, nombre, fechaNacimiento, telefono, correo);
+        
     }
 
-    public int calcularEdad() {
-        return Period.between(fechaNacimiento, LocalDate.now()).getYears();
+    public Cliente() {
     }
 
-    public String getCedula() {
-        return cedula;
+        public int calcularEdad() {
+        return Period.between(this.getFechaNacimiento(), LocalDate.now()).getYears();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" + "cedula=" + cedula + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", telefono=" + telefono + ", correo=" + correo + '}';
-    }
-
-   
-
-  
+ 
+    
     
 }
