@@ -4,6 +4,7 @@
  */
 package Clientes;
 
+import Paquetes.ListaPaquete;
 import Personas.Persona;
 import java.time.LocalDate;
 import java.time.Period;
@@ -14,16 +15,22 @@ import java.time.Period;
  */
 public class Cliente extends Persona{
     
+    private ListaPaquete paquetes;
     public Cliente(String cedula, String nombre, LocalDate fechaNacimiento, String telefono, String correo) {
         super(cedula, nombre, fechaNacimiento, telefono, correo);
-        
-    }
+        paquetes = new ListaPaquete();
+
+    } 
 
     public Cliente() {
     }
 
         public int calcularEdad() {
         return Period.between(this.getFechaNacimiento(), LocalDate.now()).getYears();
+    }
+
+    public ListaPaquete getPaquetes() {
+        return paquetes;
     }
 
  
