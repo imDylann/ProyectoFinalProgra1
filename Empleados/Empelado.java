@@ -11,12 +11,12 @@ import java.time.LocalDate;
  *
  * @author PC
  */
-public class Empelado extends Persona {
+public class Empleado extends Persona {
 
      private String puesto;
     private double salario;
 
-    public Empelado(String puesto, double salario, String cedula, String nombre, LocalDate fechaNacimiento, String telefono, String correo) {
+    public Empleado(String puesto, double salario, String cedula, String nombre, LocalDate fechaNacimiento, String telefono, String correo) {
         super(cedula, nombre, fechaNacimiento, telefono, correo);
         this.puesto = puesto;
         this.salario = salario;
