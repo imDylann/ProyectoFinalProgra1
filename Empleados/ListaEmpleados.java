@@ -24,9 +24,9 @@ public class ListaEmpleados {
        }
        return null;
     }
-        public boolean actualizarEmpleado(String nombre, String nuevoTelefono, String nuevoCorreo, String nuevoPuesto, Double salario) {
+        public boolean actualizarEmpleado(String id, String nuevoTelefono, String nuevoCorreo, String nuevoPuesto, Double salario) {
         for (Empleado empleado : empleados) {
-            if (empleado.getNombre().equals(nombre)) {
+            if (empleado.getCedula().equals(id)) {
                 empleado.setTelefono(nuevoTelefono);
                 empleado.setCorreo(nuevoCorreo);
                 empleado.setPuesto(nuevoPuesto);

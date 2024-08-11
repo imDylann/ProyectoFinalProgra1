@@ -25,7 +25,7 @@ public class RutaEntrega {
         destinos.add(destino);
     }
 
-    public void BorrarDestinoString(String destino) {
+    public void borrarDestinoString(String destino) {
         destinos.remove(destino);
     }
 
@@ -43,6 +43,10 @@ public class RutaEntrega {
 
     public Set<String> getDestinos() {
         return destinos;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
 }
