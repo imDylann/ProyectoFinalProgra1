@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Envios;
 
 import Clientes.Cliente;
@@ -23,16 +19,89 @@ public class Envio {
     private LocalDate fechaEnvio;
     private LocalDate fechaEntrega;
     private double precio;
+       private String estado;
 
-    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega, double precio) {
+    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
         this.numeroEnvio = ++contadorEnvios;
         this.cliente = cliente;
         this.paquete = paquete;
         this.ruta = ruta;
         this.fechaEnvio = fechaEnvio;
         this.fechaEntrega = fechaEntrega;
-        this.precio = precio;
+      this.precio = calcularPrecio(paquete.getPeso());
+         this.estado = "En almacén";
     }
 
-    // Getters y setters...
+  private double calcularPrecio(double peso) {
+        return 2100 + (peso > 1 ? (peso - 1) * 1200 : 0);
+    }
+
+    public static int getContadorEnvios() {
+        return contadorEnvios;
+    }
+
+    public int getNumeroEnvio() {
+        return numeroEnvio;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Paquete getPaquete() {
+        return paquete;
+    }
+
+    public RutaEntrega getRuta() {
+        return ruta;
+    }
+
+    public LocalDate getFechaEnvio() {
+        return fechaEnvio;
+    }
+
+    public LocalDate getFechaEntrega() {
+        return fechaEntrega;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    // Getters y Setters
+    public String getEstado() {
+        return estado;
+    }
+
+    public void despachar() {
+        if (this.estado.equals("En almacén")) {
+            this.estado = "Despachado";
+        }
+    }
+
+    public void entregar() {
+        if (this.estado.equals("Despachado")) {
+            this.estado = "Entregado";
+        }
+    }
+
+    public void cancelar() {
+        if (this.estado.equals("En almacén")) {
+            this.estado = "Cancelado";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Envio{" +
+                "numeroEnvio=" + numeroEnvio +
+                ", cliente=" + cliente.getNombre() +
+                ", paquete=" + paquete.getDescripcion() +
+                ", ruta=" + ruta.getDescripcion() +
+                ", fechaEnvio=" + fechaEnvio +
+                ", fechaEntrega=" + fechaEntrega +
+                ", precioEnvio=" + precio +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
 }
