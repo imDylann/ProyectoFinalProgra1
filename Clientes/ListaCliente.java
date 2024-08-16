@@ -14,10 +14,16 @@ public class ListaCliente {
     
 private ArrayList<Cliente> clientes;
 
-    public ListaCliente(ArrayList<Cliente> clientes) {
+private ListaCliente() {
         this.clientes = new ArrayList<>() ;
     }
-
+    private static ListaCliente listC;
+    public static ListaCliente getInstance(){
+        if(listC==null){
+            listC = new ListaCliente();
+        }
+        return listC;
+    }
     public void AddCliente(Cliente c){
         clientes.add(c);
     }

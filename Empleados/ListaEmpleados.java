@@ -1,12 +1,25 @@
 
 package Empleados;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class ListaEmpleados {
      private List<Empleado> empleados;
      
+     private ListaEmpleados() {
+        this.empleados = new ArrayList<>() ;
+    }
+     
+     private static ListaEmpleados listP;
+     
+     public static ListaEmpleados getInstance(){
+         if(listP==null){
+             listP = new ListaEmpleados();
+         }
+         return listP;
+     }
        public void agregarEmpleado(Empleado empleado) {
         empleados.add(empleado);
     }

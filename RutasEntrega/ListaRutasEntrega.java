@@ -8,10 +8,17 @@ public class ListaRutasEntrega {
     private HashSet<RutaEntrega> rutas;
 
    
-    public ListaRutasEntrega() {
+private ListaRutasEntrega() {
         rutas = new HashSet<>();
     }
+private static ListaRutasEntrega listR;
 
+public static ListaRutasEntrega getInstance(){
+    if(listR==null){
+        listR = new  ListaRutasEntrega();
+    }
+    return listR;
+}
 
     public void ListaRutasEntrega(RutaEntrega ruta) {
         rutas.add(ruta);

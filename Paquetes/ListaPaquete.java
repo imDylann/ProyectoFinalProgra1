@@ -18,6 +18,14 @@ public class ListaPaquete {
         this.paquetes = new HashMap<>();
     }
 
+    private static ListaPaquete listP;
+    
+    public static ListaPaquete getInstance(){
+        if(listP ==null){
+            listP = new ListaPaquete();
+        }
+        return listP;
+    }
     // Agregar paquete
     public void agregarPaquete(Paquete paquete) {
         paquetes.put(paquete.getCodigo(), paquete);
