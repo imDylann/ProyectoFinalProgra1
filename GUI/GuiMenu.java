@@ -33,6 +33,8 @@ public class GuiMenu extends javax.swing.JFrame {
         
         initComponents();
        setLocationRelativeTo(null);
+       this.DeskMenu.setEnabled(false);
+       this.DeskMenu.setVisible(false);
        actualizarFechaHora();
       clientes = ListaCliente.getInstance();
       empleados = ListaEmpleados.getInstance();
@@ -56,12 +58,12 @@ public class GuiMenu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        ClientesBtn = new javax.swing.JButton();
-        PaquetesBtn = new javax.swing.JButton();
-        EnviosBtn = new javax.swing.JButton();
-        EmpleadosBtn = new javax.swing.JButton();
-        RtaEntregaBtn = new javax.swing.JButton();
-        HomeBtn = new javax.swing.JButton();
+        ClientesLbl = new javax.swing.JLabel();
+        EmpleadosLbl = new javax.swing.JLabel();
+        PaquetesLbl = new javax.swing.JLabel();
+        RutaLbl = new javax.swing.JLabel();
+        EnviosLbl = new javax.swing.JLabel();
+        InicioLbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -87,6 +89,7 @@ public class GuiMenu extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         tarifaCont = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        DeskMenu = new javax.swing.JDesktopPane();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -111,80 +114,70 @@ public class GuiMenu extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jPanel2.setBackground(new java.awt.Color(46, 62, 78));
 
-        ClientesBtn.setBackground(new java.awt.Color(46, 62, 78));
-        ClientesBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        ClientesBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-usuario-24.png"))); // NOI18N
-        ClientesBtn.setText("  Clientes");
-        ClientesBtn.setBorder(null);
-        ClientesBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        ClientesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClientesBtnActionPerformed(evt);
+        ClientesLbl.setBackground(new java.awt.Color(255, 255, 255));
+        ClientesLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        ClientesLbl.setForeground(new java.awt.Color(255, 255, 255));
+        ClientesLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-usuario-24.png"))); // NOI18N
+        ClientesLbl.setText("Clientes");
+        ClientesLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClientesLblMouseClicked(evt);
             }
         });
 
-        PaquetesBtn.setBackground(new java.awt.Color(46, 62, 78));
-        PaquetesBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        PaquetesBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-paquete-24.png"))); // NOI18N
-        PaquetesBtn.setText("  Paquetes");
-        PaquetesBtn.setBorder(null);
-        PaquetesBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        PaquetesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PaquetesBtnActionPerformed(evt);
+        EmpleadosLbl.setBackground(new java.awt.Color(255, 255, 255));
+        EmpleadosLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        EmpleadosLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-trabajo-permanente-24.png"))); // NOI18N
+        EmpleadosLbl.setText("Empleados");
+        EmpleadosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EmpleadosLblMouseClicked(evt);
             }
         });
 
-        EnviosBtn.setBackground(new java.awt.Color(46, 62, 78));
-        EnviosBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        EnviosBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-entrega-24.png"))); // NOI18N
-        EnviosBtn.setText("   Envios");
-        EnviosBtn.setBorder(null);
-        EnviosBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        EnviosBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EnviosBtnActionPerformed(evt);
+        PaquetesLbl.setBackground(new java.awt.Color(255, 255, 255));
+        PaquetesLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        PaquetesLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-paquete-24.png"))); // NOI18N
+        PaquetesLbl.setText("Paquetes");
+        PaquetesLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaquetesLblMouseClicked(evt);
             }
         });
 
-        EmpleadosBtn.setBackground(new java.awt.Color(46, 62, 78));
-        EmpleadosBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        EmpleadosBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-trabajo-permanente-24.png"))); // NOI18N
-        EmpleadosBtn.setText("  Empleados");
-        EmpleadosBtn.setBorder(null);
-        EmpleadosBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        EmpleadosBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmpleadosBtnActionPerformed(evt);
+        RutaLbl.setBackground(new java.awt.Color(255, 255, 255));
+        RutaLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        RutaLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-ruta-24.png"))); // NOI18N
+        RutaLbl.setText("Ruta de entrega");
+        RutaLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RutaLblMouseClicked(evt);
             }
         });
 
-        RtaEntregaBtn.setBackground(new java.awt.Color(46, 62, 78));
-        RtaEntregaBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        RtaEntregaBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-ruta-24.png"))); // NOI18N
-        RtaEntregaBtn.setText("  Ruta De entrega");
-        RtaEntregaBtn.setBorder(null);
-        RtaEntregaBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        RtaEntregaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RtaEntregaBtnActionPerformed(evt);
+        EnviosLbl.setBackground(new java.awt.Color(255, 255, 255));
+        EnviosLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        EnviosLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-entrega-24.png"))); // NOI18N
+        EnviosLbl.setText("Envios");
+        EnviosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EnviosLblMouseClicked(evt);
             }
         });
 
-        HomeBtn.setBackground(new java.awt.Color(46, 62, 78));
-        HomeBtn.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        HomeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-exterior-24.png"))); // NOI18N
-        HomeBtn.setText("  Inicio");
-        HomeBtn.setBorder(null);
-        HomeBtn.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
-        HomeBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HomeBtnActionPerformed(evt);
+        InicioLbl.setBackground(new java.awt.Color(255, 255, 255));
+        InicioLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        InicioLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-exterior-24.png"))); // NOI18N
+        InicioLbl.setText("Inicio");
+        InicioLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                InicioLblMouseClicked(evt);
             }
         });
 
@@ -192,28 +185,28 @@ public class GuiMenu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RtaEntregaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-            .addComponent(EmpleadosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(EnviosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(PaquetesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ClientesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(HomeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ClientesLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(EmpleadosLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PaquetesLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RutaLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(EnviosLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(InicioLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PaquetesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EnviosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmpleadosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RtaEntregaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(ClientesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EmpleadosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PaquetesLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(RutaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EnviosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(InicioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -253,7 +246,7 @@ public class GuiMenu extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(FECHA, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,11 +460,12 @@ public class GuiMenu extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(tarifaCont, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 16, Short.MAX_VALUE))
+                        .addComponent(jLabel10)
+                        .addGap(0, 16, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tarifaCont)
+                        .addGap(43, 43, 43))))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,6 +485,19 @@ public class GuiMenu extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("copyright © Rigby Inc All rights reserved");
 
+        DeskMenu.setBackground(new java.awt.Color(153, 153, 153));
+
+        javax.swing.GroupLayout DeskMenuLayout = new javax.swing.GroupLayout(DeskMenu);
+        DeskMenu.setLayout(DeskMenuLayout);
+        DeskMenuLayout.setHorizontalGroup(
+            DeskMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 840, Short.MAX_VALUE)
+        );
+        DeskMenuLayout.setVerticalGroup(
+            DeskMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 421, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -498,21 +505,20 @@ public class GuiMenu extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 22, Short.MAX_VALUE))
+                        .addGap(48, 48, 48)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeskMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(120, 120, 120)))
-                .addGap(30, 30, 30)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                        .addGap(228, 228, 228)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,14 +530,14 @@ public class GuiMenu extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(430, 430, 430)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10))))
+                        .addGap(12, 12, 12)
+                        .addComponent(DeskMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -548,33 +554,39 @@ public class GuiMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ClientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ClientesBtnActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void PaquetesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaquetesBtnActionPerformed
+    private void ClientesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesLblMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_PaquetesBtnActionPerformed
+        System.out.println("Holaaaa");
+    }//GEN-LAST:event_ClientesLblMouseClicked
 
-    private void EnviosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviosBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EnviosBtnActionPerformed
+    private void PaquetesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaquetesLblMouseClicked
+        // TODO add your handling code here:}
+            System.out.println("Holaaaa");
+    }//GEN-LAST:event_PaquetesLblMouseClicked
 
-    private void EmpleadosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosBtnActionPerformed
+    private void EmpleadosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadosLblMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmpleadosBtnActionPerformed
+            System.out.println("Holaaaa");
+    }//GEN-LAST:event_EmpleadosLblMouseClicked
 
-    private void RtaEntregaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RtaEntregaBtnActionPerformed
+    private void RutaLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RutaLblMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_RtaEntregaBtnActionPerformed
+            System.out.println("Holaaaa");
+    }//GEN-LAST:event_RutaLblMouseClicked
 
-    private void HomeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeBtnActionPerformed
+    private void EnviosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnviosLblMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_HomeBtnActionPerformed
+            System.out.println("Holaaaa");
+    }//GEN-LAST:event_EnviosLblMouseClicked
+
+    private void InicioLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InicioLblMouseClicked
+        // TODO add your handling code here:
+            System.out.println("Holaaaa");
+    }//GEN-LAST:event_InicioLblMouseClicked
 
     /**
      * @param args the command line arguments
@@ -631,15 +643,16 @@ public class GuiMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ClienteCont;
-    private javax.swing.JButton ClientesBtn;
-    private javax.swing.JButton EmpleadosBtn;
-    private javax.swing.JButton EnviosBtn;
+    private javax.swing.JLabel ClientesLbl;
+    private javax.swing.JDesktopPane DeskMenu;
+    private javax.swing.JLabel EmpleadosLbl;
     private javax.swing.JLabel EnviosCont;
+    private javax.swing.JLabel EnviosLbl;
     private javax.swing.JLabel FECHA;
-    private javax.swing.JButton HomeBtn;
+    private javax.swing.JLabel InicioLbl;
     private javax.swing.JLabel PaqueteCont;
-    private javax.swing.JButton PaquetesBtn;
-    private javax.swing.JButton RtaEntregaBtn;
+    private javax.swing.JLabel PaquetesLbl;
+    private javax.swing.JLabel RutaLbl;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
