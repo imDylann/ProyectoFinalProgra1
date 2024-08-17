@@ -53,20 +53,20 @@
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" pref="80" max="-2" attributes="0"/>
+                                  <Component id="Cedulalbl" min="-2" pref="80" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="CorreoLbl" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="CedulaTxt" min="-2" pref="220" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="CorreoTxt" min="-2" pref="220" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel5" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="NombreLbl" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="NombreTxt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="FechaNlbl" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
                               <Component id="FechaNTxt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="TelLbl" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                               <Component id="TelTxt" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -84,8 +84,8 @@
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel8" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="Cedulalbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="CorreoLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -93,15 +93,15 @@
                               <Component id="CorreoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="NombreLbl" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="NombreTxt" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="FechaNlbl" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="FechaNTxt" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="TelLbl" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Component id="TelTxt" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -307,7 +307,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="Cedulalbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
@@ -331,7 +331,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="NombreLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
@@ -358,7 +358,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaNTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="FechaNlbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
@@ -382,7 +382,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="TelLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>
@@ -406,7 +406,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TelTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="CorreoLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="18" style="1"/>

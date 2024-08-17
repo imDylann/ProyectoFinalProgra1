@@ -15,6 +15,7 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
      */
     public FrmRutaEntrega() {
         initComponents();
+         DisableAllR();
     }
 
     /**
@@ -40,17 +41,17 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
         AddDestinoLbl = new javax.swing.JLabel();
         DeleteDestinoLbl = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        CodigoLbl = new javax.swing.JLabel();
         CodigoTxt = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        NombreLbl = new javax.swing.JLabel();
         DescripcionTxt = new javax.swing.JFormattedTextField();
-        jLabel6 = new javax.swing.JLabel();
+        DescripcionLbl = new javax.swing.JLabel();
         NombreTxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        DestinosLbl = new javax.swing.JLabel();
+        agregarDestinoLbl = new javax.swing.JLabel();
         addDestinoTxt = new javax.swing.JTextField();
         DestinoBox = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
+        BorrarDestinoLbl = new javax.swing.JLabel();
         deleteDestinoTxt = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(840, 421));
@@ -178,9 +179,9 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Codigo:");
+        CodigoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CodigoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        CodigoLbl.setText("Codigo:");
 
         CodigoTxt.setBackground(new java.awt.Color(204, 204, 204));
         CodigoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -190,9 +191,9 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nombre:");
+        NombreLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        NombreLbl.setForeground(new java.awt.Color(255, 255, 255));
+        NombreLbl.setText("Nombre:");
 
         DescripcionTxt.setBackground(new java.awt.Color(204, 204, 204));
         DescripcionTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MM yyyy"))));
@@ -203,9 +204,9 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Descripcion:");
+        DescripcionLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        DescripcionLbl.setForeground(new java.awt.Color(255, 255, 255));
+        DescripcionLbl.setText("Descripcion:");
 
         NombreTxt.setBackground(new java.awt.Color(204, 204, 204));
         NombreTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -215,13 +216,13 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Destinos:");
+        DestinosLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        DestinosLbl.setForeground(new java.awt.Color(255, 255, 255));
+        DestinosLbl.setText("Destinos:");
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Agregar Destino:");
+        agregarDestinoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        agregarDestinoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        agregarDestinoLbl.setText("Agregar Destino:");
 
         addDestinoTxt.setBackground(new java.awt.Color(204, 204, 204));
         addDestinoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -235,9 +236,9 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
         DestinoBox.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DestinoBox.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Borrar Destino:");
+        BorrarDestinoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        BorrarDestinoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        BorrarDestinoLbl.setText("Borrar Destino:");
 
         deleteDestinoTxt.setBackground(new java.awt.Color(204, 204, 204));
         deleteDestinoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -259,24 +260,24 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(162, 162, 162)
-                                .addComponent(jLabel8))
+                                .addComponent(agregarDestinoLbl))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(deleteDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DestinosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
+                                    .addComponent(BorrarDestinoLbl)
                                     .addComponent(addDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)))
+                            .addComponent(DescripcionLbl)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DestinoBox, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -294,26 +295,26 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(agregarDestinoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BorrarDestinoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(deleteDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DestinosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DestinoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
@@ -353,30 +354,58 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteDestinoTxtActionPerformed
 
-
+public void DisableAllR(){
+    
+    this.CodigoLbl.setEnabled(false);
+    this.CodigoLbl.setVisible(false);
+    this.CodigoTxt.setEnabled(false);
+    this.CodigoTxt.setVisible(false);
+    this.NombreLbl.setEnabled(false);
+    this.NombreLbl.setVisible(false);
+    this.NombreTxt.setEnabled(false);
+    this.NombreTxt.setVisible(false);
+    this.DescripcionLbl.setEnabled(false);
+    this.DescripcionLbl.setVisible(false);
+    this.DescripcionTxt.setEnabled(false);
+    this.DescripcionTxt.setVisible(false);
+     this.DestinosLbl.setEnabled(false);
+    this.DestinosLbl.setVisible(false);
+    this.DestinoBox.setEnabled(false);
+    this.DestinoBox.setVisible(false);
+    this.agregarDestinoLbl.setEnabled(false);
+    this.agregarDestinoLbl.setVisible(false);
+    this.addDestinoTxt.setEnabled(false);
+    this.addDestinoTxt.setVisible(false);
+    this.DeleteDestinoLbl.setEnabled(false);
+    this.DeleteDestinoLbl.setVisible(false);
+     this.BorrarDestinoLbl.setEnabled(false);
+    this.BorrarDestinoLbl.setVisible(false);
+     this.deleteDestinoTxt.setEnabled(false);
+    this.deleteDestinoTxt.setVisible(false);
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
     private javax.swing.JLabel AddDestinoLbl;
     private javax.swing.JLabel AddLbl;
+    private javax.swing.JLabel BorrarDestinoLbl;
     private javax.swing.JButton CancelLbl;
+    private javax.swing.JLabel CodigoLbl;
     private javax.swing.JTextField CodigoTxt;
     private javax.swing.JLabel DeleteDestinoLbl;
     private javax.swing.JLabel DeleteLbl;
+    private javax.swing.JLabel DescripcionLbl;
     private javax.swing.JFormattedTextField DescripcionTxt;
     private javax.swing.JComboBox<String> DestinoBox;
+    private javax.swing.JLabel DestinosLbl;
     private javax.swing.JButton ListoLbl;
+    private javax.swing.JLabel NombreLbl;
     private javax.swing.JTextField NombreTxt;
     private javax.swing.JTextField addDestinoTxt;
+    private javax.swing.JLabel agregarDestinoLbl;
     private javax.swing.JLabel buscarLbl;
     private javax.swing.JTextField deleteDestinoTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

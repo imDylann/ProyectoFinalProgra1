@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import Clientes.ListaCliente;
+
 /**
  *
  * @author ASUS
@@ -13,8 +15,11 @@ public class FrmCliente extends javax.swing.JInternalFrame {
     /**
      * Creates new form FrmCliente
      */
+    private ListaCliente listC;
     public FrmCliente() {
         initComponents();
+        listC = ListaCliente.getInstance();
+        DisableAllC();
     }
 
     /**
@@ -38,15 +43,15 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         ListoLbl = new javax.swing.JButton();
         CancelLbl = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Cedulalbl = new javax.swing.JLabel();
         CedulaTxt = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        NombreLbl = new javax.swing.JLabel();
         FechaNTxt = new javax.swing.JFormattedTextField();
-        jLabel6 = new javax.swing.JLabel();
+        FechaNlbl = new javax.swing.JLabel();
         NombreTxt = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        TelLbl = new javax.swing.JLabel();
         TelTxt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        CorreoLbl = new javax.swing.JLabel();
         CorreoTxt = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(840, 421));
@@ -155,9 +160,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Cedula:");
+        Cedulalbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Cedulalbl.setForeground(new java.awt.Color(255, 255, 255));
+        Cedulalbl.setText("Cedula:");
 
         CedulaTxt.setBackground(new java.awt.Color(204, 204, 204));
         CedulaTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -167,9 +172,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nombre:");
+        NombreLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        NombreLbl.setForeground(new java.awt.Color(255, 255, 255));
+        NombreLbl.setText("Nombre:");
 
         FechaNTxt.setBackground(new java.awt.Color(204, 204, 204));
         FechaNTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MM yyyy"))));
@@ -180,9 +185,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Fecha N:");
+        FechaNlbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        FechaNlbl.setForeground(new java.awt.Color(255, 255, 255));
+        FechaNlbl.setText("Fecha N:");
 
         NombreTxt.setBackground(new java.awt.Color(204, 204, 204));
         NombreTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -192,9 +197,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Telefono:");
+        TelLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        TelLbl.setForeground(new java.awt.Color(255, 255, 255));
+        TelLbl.setText("Telefono:");
 
         TelTxt.setBackground(new java.awt.Color(204, 204, 204));
         TelTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -204,9 +209,9 @@ public class FrmCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Correo:");
+        CorreoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CorreoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        CorreoLbl.setText("Correo:");
 
         CorreoTxt.setBackground(new java.awt.Color(204, 204, 204));
         CorreoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -229,18 +234,18 @@ public class FrmCliente extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Cedulalbl, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(162, 162, 162)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CorreoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(CedulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(CorreoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FechaNlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FechaNTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TelLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -253,22 +258,22 @@ public class FrmCliente extends javax.swing.JInternalFrame {
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Cedulalbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CorreoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CedulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CorreoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FechaNlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(FechaNTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TelLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(TelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0))
@@ -308,26 +313,48 @@ public class FrmCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CorreoTxtActionPerformed
 
-
+public void DisableAllC(){
+    
+    this.Cedulalbl.setEnabled(false);
+    this.Cedulalbl.setVisible(false);
+    this.CedulaTxt.setEnabled(false);
+    this.CedulaTxt.setVisible(false);
+    this.NombreLbl.setEnabled(false);
+    this.NombreLbl.setVisible(false);
+    this.NombreTxt.setEnabled(false);
+    this.NombreTxt.setVisible(false);
+    this.FechaNlbl.setEnabled(false);
+    this.FechaNlbl.setVisible(false);
+    this.FechaNTxt.setEnabled(false);
+    this.FechaNTxt.setVisible(false);
+     this.CorreoLbl.setEnabled(false);
+    this.CorreoLbl.setVisible(false);
+    this.CorreoTxt.setEnabled(false);
+    this.CorreoTxt.setVisible(false);
+    this.TelLbl.setEnabled(false);
+    this.TelLbl.setVisible(false);
+    this.TelTxt.setEnabled(false);
+    this.TelTxt.setVisible(false);
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
     private javax.swing.JLabel AddLbl;
     private javax.swing.JButton CancelLbl;
     private javax.swing.JTextField CedulaTxt;
+    private javax.swing.JLabel Cedulalbl;
+    private javax.swing.JLabel CorreoLbl;
     private javax.swing.JTextField CorreoTxt;
     private javax.swing.JLabel DeleteLbl;
     private javax.swing.JFormattedTextField FechaNTxt;
+    private javax.swing.JLabel FechaNlbl;
     private javax.swing.JButton ListoLbl;
+    private javax.swing.JLabel NombreLbl;
     private javax.swing.JTextField NombreTxt;
+    private javax.swing.JLabel TelLbl;
     private javax.swing.JTextField TelTxt;
     private javax.swing.JLabel buscarLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

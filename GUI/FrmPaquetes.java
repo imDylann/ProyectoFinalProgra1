@@ -15,6 +15,7 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
      */
     public FrmPaquetes() {
         initComponents();
+         DisableAllP();
     }
 
     /**
@@ -37,16 +38,16 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         listoLbl = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        CedulaRlbl = new javax.swing.JTextField();
-        CodigoLbl = new javax.swing.JFormattedTextField();
-        PesoLbl = new javax.swing.JFormattedTextField();
-        DescripcionLbl = new javax.swing.JTextField();
-        CedulaDlbl = new javax.swing.JTextField();
+        CodigoLbl = new javax.swing.JLabel();
+        CedulaRLbl = new javax.swing.JLabel();
+        DescripcionLbl = new javax.swing.JLabel();
+        PesoLbl = new javax.swing.JLabel();
+        CedulaDlbl = new javax.swing.JLabel();
+        CedulaRTxt = new javax.swing.JTextField();
+        CodigoTxt = new javax.swing.JFormattedTextField();
+        PesoTxt = new javax.swing.JFormattedTextField();
+        DescripcionTxt = new javax.swing.JTextField();
+        CedulaDTxt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -130,57 +131,57 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         jLabel9.setBackground(new java.awt.Color(204, 204, 204));
         jLabel9.setOpaque(true);
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Codigo:");
+        CodigoLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CodigoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        CodigoLbl.setText("Codigo:");
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Cedula de Remitente:");
+        CedulaRLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaRLbl.setForeground(new java.awt.Color(255, 255, 255));
+        CedulaRLbl.setText("Cedula de Remitente:");
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Descripcion:");
+        DescripcionLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        DescripcionLbl.setForeground(new java.awt.Color(255, 255, 255));
+        DescripcionLbl.setText("Descripcion:");
 
-        jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Peso(kg):");
+        PesoLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        PesoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        PesoLbl.setText("Peso(kg):");
 
-        jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Cedula del Destinatario:");
+        CedulaDlbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaDlbl.setForeground(new java.awt.Color(255, 255, 255));
+        CedulaDlbl.setText("Cedula del Destinatario:");
 
-        CedulaRlbl.setEditable(false);
-        CedulaRlbl.setBackground(new java.awt.Color(204, 204, 204));
-        CedulaRlbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        CedulaRlbl.addActionListener(new java.awt.event.ActionListener() {
+        CedulaRTxt.setEditable(false);
+        CedulaRTxt.setBackground(new java.awt.Color(204, 204, 204));
+        CedulaRTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CedulaRTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CedulaRlblActionPerformed(evt);
+                CedulaRTxtActionPerformed(evt);
             }
         });
 
-        CodigoLbl.setBackground(new java.awt.Color(204, 204, 204));
-        CodigoLbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CodigoTxt.setBackground(new java.awt.Color(204, 204, 204));
+        CodigoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        PesoLbl.setBackground(new java.awt.Color(204, 204, 204));
-        PesoLbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        PesoLbl.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        PesoTxt.setBackground(new java.awt.Color(204, 204, 204));
+        PesoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PesoTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
-        DescripcionLbl.setEditable(false);
-        DescripcionLbl.setBackground(new java.awt.Color(204, 204, 204));
-        DescripcionLbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        DescripcionLbl.addActionListener(new java.awt.event.ActionListener() {
+        DescripcionTxt.setEditable(false);
+        DescripcionTxt.setBackground(new java.awt.Color(204, 204, 204));
+        DescripcionTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DescripcionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DescripcionLblActionPerformed(evt);
+                DescripcionTxtActionPerformed(evt);
             }
         });
 
-        CedulaDlbl.setEditable(false);
-        CedulaDlbl.setBackground(new java.awt.Color(204, 204, 204));
-        CedulaDlbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        CedulaDlbl.addActionListener(new java.awt.event.ActionListener() {
+        CedulaDTxt.setEditable(false);
+        CedulaDTxt.setBackground(new java.awt.Color(204, 204, 204));
+        CedulaDTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CedulaDTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CedulaDlblActionPerformed(evt);
+                CedulaDTxtActionPerformed(evt);
             }
         });
 
@@ -194,30 +195,30 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DescripcionLbl, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel16)
+                                .addComponent(CedulaDlbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CedulaDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
+                                .addComponent(CedulaRLbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CedulaRlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addComponent(CodigoLbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -226,24 +227,24 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CedulaRlbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CedulaRLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CedulaDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CedulaDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 111, Short.MAX_VALUE))
         );
 
@@ -298,36 +299,59 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CedulaRlblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaRlblActionPerformed
+    private void CedulaRTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaRTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CedulaRlblActionPerformed
+    }//GEN-LAST:event_CedulaRTxtActionPerformed
 
-    private void DescripcionLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionLblActionPerformed
+    private void DescripcionTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DescripcionLblActionPerformed
+    }//GEN-LAST:event_DescripcionTxtActionPerformed
 
-    private void CedulaDlblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaDlblActionPerformed
+    private void CedulaDTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CedulaDTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CedulaDlblActionPerformed
+    }//GEN-LAST:event_CedulaDTxtActionPerformed
 
-
+public void DisableAllP(){
+    
+    this.CodigoTxt.setEnabled(false);
+    this.CodigoTxt.setVisible(false);
+    this.CodigoTxt.setEnabled(false);
+    this.CodigoTxt.setVisible(false);
+    this.DescripcionTxt.setEnabled(false);
+    this.DescripcionTxt.setVisible(false);
+    this.DescripcionTxt.setEnabled(false);
+    this.DescripcionTxt.setVisible(false);
+     this.PesoLbl.setEnabled(false);
+    this.PesoLbl.setVisible(false);
+    this.PesoTxt.setEnabled(false);
+    this.PesoTxt.setVisible(false);
+    this.CedulaRLbl.setEnabled(false);
+    this.CedulaRLbl.setVisible(false);
+    this.CedulaRTxt.setEnabled(false);
+    this.CedulaRTxt.setVisible(false);
+    this.CedulaDlbl.setEnabled(false);
+    this.CedulaDlbl.setVisible(false);
+     this.CedulaDTxt.setEnabled(false);
+    this.CedulaDTxt.setVisible(false);
+  
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
     private javax.swing.JLabel AddLbl;
     private javax.swing.JLabel BuscarLbl;
     private javax.swing.JLabel CancelLbl;
-    private javax.swing.JTextField CedulaDlbl;
-    private javax.swing.JTextField CedulaRlbl;
-    private javax.swing.JFormattedTextField CodigoLbl;
+    private javax.swing.JTextField CedulaDTxt;
+    private javax.swing.JLabel CedulaDlbl;
+    private javax.swing.JLabel CedulaRLbl;
+    private javax.swing.JTextField CedulaRTxt;
+    private javax.swing.JLabel CodigoLbl;
+    private javax.swing.JFormattedTextField CodigoTxt;
     private javax.swing.JLabel Deletelbl;
-    private javax.swing.JTextField DescripcionLbl;
-    private javax.swing.JFormattedTextField PesoLbl;
+    private javax.swing.JLabel DescripcionLbl;
+    private javax.swing.JTextField DescripcionTxt;
+    private javax.swing.JLabel PesoLbl;
+    private javax.swing.JFormattedTextField PesoTxt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

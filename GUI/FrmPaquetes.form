@@ -216,17 +216,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel15" min="-2" pref="88" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PesoLbl" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="DescripcionLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PesoLbl" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="PesoTxt" min="-2" pref="168" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="DescripcionLbl" min="-2" pref="500" max="-2" attributes="0"/>
+                                      <Component id="DescripcionTxt" min="-2" pref="500" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -234,21 +234,21 @@
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CedulaDlbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CedulaDlbl" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="CedulaDTxt" min="-2" pref="253" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CedulaRLbl" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CedulaRlbl" min="-2" pref="253" max="-2" attributes="0"/>
+                                      <Component id="CedulaRTxt" min="-2" pref="253" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="CodigoLbl" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="CodigoLbl" min="-2" pref="168" max="-2" attributes="0"/>
+                              <Component id="CodigoTxt" min="-2" pref="168" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="39" max="32767" attributes="0"/>
@@ -261,28 +261,28 @@
                       <Component id="jLabel9" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel12" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="CodigoLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CodigoLbl" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="CodigoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="DescripcionLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DescripcionLbl" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="DescripcionTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel15" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="PesoLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PesoLbl" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="PesoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="CedulaRlbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CedulaRLbl" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="CedulaRTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel16" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="CedulaDlbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CedulaDlbl" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="CedulaDTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="111" max="32767" attributes="0"/>
                   </Group>
@@ -298,7 +298,7 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
+            <Component class="javax.swing.JLabel" name="CodigoLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -309,7 +309,7 @@
                 <Property name="text" type="java.lang.String" value="Codigo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
+            <Component class="javax.swing.JLabel" name="CedulaRLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -320,7 +320,7 @@
                 <Property name="text" type="java.lang.String" value="Cedula de Remitente:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
+            <Component class="javax.swing.JLabel" name="DescripcionLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -331,7 +331,7 @@
                 <Property name="text" type="java.lang.String" value="Descripcion:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
+            <Component class="javax.swing.JLabel" name="PesoLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -342,7 +342,7 @@
                 <Property name="text" type="java.lang.String" value="Peso(kg):"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
+            <Component class="javax.swing.JLabel" name="CedulaDlbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -353,7 +353,7 @@
                 <Property name="text" type="java.lang.String" value="Cedula del Destinatario:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="CedulaRlbl">
+            <Component class="javax.swing.JTextField" name="CedulaRTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -366,10 +366,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaRlblActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaRTxtActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="CodigoLbl">
+            <Component class="javax.swing.JFormattedTextField" name="CodigoTxt">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -381,7 +381,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="PesoLbl">
+            <Component class="javax.swing.JFormattedTextField" name="PesoTxt">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -396,7 +396,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DescripcionLbl">
+            <Component class="javax.swing.JTextField" name="DescripcionTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -409,10 +409,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescripcionLblActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescripcionTxtActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="CedulaDlbl">
+            <Component class="javax.swing.JTextField" name="CedulaDTxt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -425,7 +425,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaDlblActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaDTxtActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
