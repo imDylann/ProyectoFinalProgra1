@@ -133,6 +133,7 @@ public class GuiMenu extends javax.swing.JFrame {
 
         EmpleadosLbl.setBackground(new java.awt.Color(255, 255, 255));
         EmpleadosLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        EmpleadosLbl.setForeground(new java.awt.Color(255, 255, 255));
         EmpleadosLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-trabajo-permanente-24.png"))); // NOI18N
         EmpleadosLbl.setText("Empleados");
         EmpleadosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,6 +144,7 @@ public class GuiMenu extends javax.swing.JFrame {
 
         PaquetesLbl.setBackground(new java.awt.Color(255, 255, 255));
         PaquetesLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        PaquetesLbl.setForeground(new java.awt.Color(255, 255, 255));
         PaquetesLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-paquete-24.png"))); // NOI18N
         PaquetesLbl.setText("Paquetes");
         PaquetesLbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,6 +155,7 @@ public class GuiMenu extends javax.swing.JFrame {
 
         RutaLbl.setBackground(new java.awt.Color(255, 255, 255));
         RutaLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        RutaLbl.setForeground(new java.awt.Color(255, 255, 255));
         RutaLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-ruta-24.png"))); // NOI18N
         RutaLbl.setText("Ruta de entrega");
         RutaLbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,6 +166,7 @@ public class GuiMenu extends javax.swing.JFrame {
 
         EnviosLbl.setBackground(new java.awt.Color(255, 255, 255));
         EnviosLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        EnviosLbl.setForeground(new java.awt.Color(255, 255, 255));
         EnviosLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-entrega-24.png"))); // NOI18N
         EnviosLbl.setText("Envios");
         EnviosLbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -173,6 +177,7 @@ public class GuiMenu extends javax.swing.JFrame {
 
         InicioLbl.setBackground(new java.awt.Color(255, 255, 255));
         InicioLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        InicioLbl.setForeground(new java.awt.Color(255, 255, 255));
         InicioLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-exterior-24.png"))); // NOI18N
         InicioLbl.setText("Inicio");
         InicioLbl.addMouseListener(new java.awt.event.MouseAdapter() {
