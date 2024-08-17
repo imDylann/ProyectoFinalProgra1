@@ -31,6 +31,7 @@ public class GuiMenu extends javax.swing.JFrame {
     private FrmEmpleados frmEmpleado;
     private FrmCliente frmCliente;
     private FrmPaquetes frmPaquete;
+    private FrmRutaEntrega frmRuta;
     
     public GuiMenu() {
         
@@ -568,11 +569,21 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void ClientesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesLblMouseClicked
         // TODO add your handling code here:
-        System.out.println("Holaaaa");
+          DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
+        
+         DeskMenu.setEnabled(true);
+        DeskMenu.setVisible(true);
+        this.frmCliente = new FrmCliente();
+        this.DeskMenu.add(frmCliente);
+        frmCliente.setEnabled(true);
+        frmCliente.setVisible(true);
     }//GEN-LAST:event_ClientesLblMouseClicked
 
     private void PaquetesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaquetesLblMouseClicked
         // TODO add your handling code here:}
+            DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
           
         DeskMenu.setEnabled(true);
         DeskMenu.setVisible(true);
@@ -584,6 +595,9 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void EmpleadosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadosLblMouseClicked
         // TODO add your handling code here:
+          DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
+          
         DeskMenu.setEnabled(true);
         DeskMenu.setVisible(true);
         this.frmEmpleado = new FrmEmpleados();
@@ -596,7 +610,15 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void RutaLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RutaLblMouseClicked
         // TODO add your handling code here:
-            System.out.println("Holaaaa");
+                 DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
+          
+        DeskMenu.setEnabled(true);
+        DeskMenu.setVisible(true);
+        this.frmRuta = new FrmRutaEntrega();
+        this.DeskMenu.add(frmRuta);
+        frmRuta.setEnabled(true);
+        frmRuta.setVisible(true);
     }//GEN-LAST:event_RutaLblMouseClicked
 
     private void EnviosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnviosLblMouseClicked
@@ -606,7 +628,8 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void InicioLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InicioLblMouseClicked
         // TODO add your handling code here:
-            System.out.println("Holaaaa");
+        DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
     }//GEN-LAST:event_InicioLblMouseClicked
 
     /**
