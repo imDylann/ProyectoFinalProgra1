@@ -28,6 +28,9 @@ public class GuiMenu extends javax.swing.JFrame {
     private ListaRutasEntrega rutas;
     private ListaPaquete paquetes;
     private Date fecha = new Date() ;
+    private FrmEmpleados frmEmpleado;
+    private FrmCliente frmCliente;
+    private FrmPaquetes frmPaquete;
     
     public GuiMenu() {
         
@@ -570,12 +573,25 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void PaquetesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaquetesLblMouseClicked
         // TODO add your handling code here:}
-            System.out.println("Holaaaa");
+          
+        DeskMenu.setEnabled(true);
+        DeskMenu.setVisible(true);
+        this.frmPaquete = new FrmPaquetes();
+        this.DeskMenu.add(frmPaquete);
+        frmPaquete.setEnabled(true);
+        frmPaquete.setVisible(true);
     }//GEN-LAST:event_PaquetesLblMouseClicked
 
     private void EmpleadosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmpleadosLblMouseClicked
         // TODO add your handling code here:
-            System.out.println("Holaaaa");
+        DeskMenu.setEnabled(true);
+        DeskMenu.setVisible(true);
+        this.frmEmpleado = new FrmEmpleados();
+        this.DeskMenu.add(frmEmpleado);
+        frmEmpleado.setEnabled(true);
+        frmEmpleado.setVisible(true);
+      
+            
     }//GEN-LAST:event_EmpleadosLblMouseClicked
 
     private void RutaLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RutaLblMouseClicked
