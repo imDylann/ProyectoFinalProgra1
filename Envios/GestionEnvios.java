@@ -21,9 +21,16 @@ public class GestionEnvios {
     private Queue<Envio> colaEnvios;
     private List<Envio> listaEnvios;
 
-    public GestionEnvios() {
+    private GestionEnvios() {
         this.colaEnvios = new LinkedList<>();
         this.listaEnvios = new ArrayList<>();
+    }
+    private static GestionEnvios gestionenvios;
+    
+    public static GestionEnvios getInstance(){
+        if(gestionenvios==null){
+           gestionenvios= new GestionEnvios(); 
+        }return gestionenvios;
     }
 
     public void registrarEnvio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {

@@ -6,6 +6,7 @@ package GUI;
 
 import Clientes.ListaCliente;
 import Empleados.ListaEmpleados;
+import Envios.GestionEnvios;
 import Paquetes.ListaPaquete;
 import RutasEntrega.ListaRutasEntrega;
 import java.awt.event.ActionEvent;
@@ -27,11 +28,13 @@ public class GuiMenu extends javax.swing.JFrame {
     private ListaEmpleados empleados;
     private ListaRutasEntrega rutas;
     private ListaPaquete paquetes;
+    private GestionEnvios envios;
     private Date fecha = new Date() ;
     private FrmEmpleados frmEmpleado;
     private FrmCliente frmCliente;
     private FrmPaquetes frmPaquete;
     private FrmRutaEntrega frmRuta;
+    private FrmEnvios frmEnvio;
     
     public GuiMenu() {
         
@@ -44,6 +47,7 @@ public class GuiMenu extends javax.swing.JFrame {
       empleados = ListaEmpleados.getInstance();
       rutas = ListaRutasEntrega.getInstance();
       paquetes = ListaPaquete.getInstance();
+  
       
     }
 
@@ -623,7 +627,15 @@ public class GuiMenu extends javax.swing.JFrame {
 
     private void EnviosLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EnviosLblMouseClicked
         // TODO add your handling code here:
-            System.out.println("Holaaaa");
+                  DeskMenu.setEnabled(false);
+          DeskMenu.setVisible(false);
+        
+         DeskMenu.setEnabled(true);
+        DeskMenu.setVisible(true);
+        this.frmEnvio = new FrmEnvios();
+        this.DeskMenu.add(frmEnvio);
+        frmEnvio.setEnabled(true);
+        frmEnvio.setVisible(true);
     }//GEN-LAST:event_EnviosLblMouseClicked
 
     private void InicioLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InicioLblMouseClicked

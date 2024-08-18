@@ -20,9 +20,6 @@ public static ListaRutasEntrega getInstance(){
     return listR;
 }
 
-    public void ListaRutasEntrega(RutaEntrega ruta) {
-        rutas.add(ruta);
-    }
 
   
     public boolean actualizarRuta(String codigoRuta, String nuevaDescripcion, String nuevosDestinos) {
@@ -36,8 +33,8 @@ public static ListaRutasEntrega getInstance(){
         return false; 
     }
     
-public void agregarRuta(String codigoRuta) {
-         rutas.removeIf(ruta -> ruta.getCodigo().equals(codigoRuta));
+public void agregarRuta(RutaEntrega ruta) {
+        rutas.add(ruta);
     }
 
     public void eliminarRuta(String codigoRuta) {
