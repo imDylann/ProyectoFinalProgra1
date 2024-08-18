@@ -97,16 +97,6 @@
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="CedulaLbl" min="-2" pref="80" max="-2" attributes="0"/>
-                                          <EmptySpace min="180" pref="180" max="-2" attributes="0"/>
-                                          <Component id="CorreoLbl" min="-2" pref="90" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="CedulaTxt" min="-2" pref="220" max="-2" attributes="0"/>
-                                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                          <Component id="CorreoTxt" min="-2" pref="220" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
                                           <Component id="NombreLbl" min="-2" pref="205" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                           <Component id="PuestoLbl" min="-2" pref="90" max="-2" attributes="0"/>
@@ -128,6 +118,17 @@
                                       </Group>
                                       <Component id="TelLbl" min="-2" pref="90" max="-2" attributes="0"/>
                                       <Component id="TelTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="CedulaLbl" max="32767" attributes="0"/>
+                                              <Component id="CedulaTxt" pref="220" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="CorreoTxt" pref="220" max="32767" attributes="0"/>
+                                              <Component id="CorreoLbl" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -149,9 +150,9 @@
                       <Group type="102" attributes="0">
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="CedulaLbl" min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="CorreoLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="CedulaLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="CorreoLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -363,6 +364,9 @@
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ListoLblActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="CancelLbl">
               <Properties>
@@ -374,6 +378,9 @@
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelLblActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -462,7 +469,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="dd MM yyyy" subtype="-1" type="1"/>
+              <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="1"/>

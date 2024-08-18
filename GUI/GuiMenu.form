@@ -85,6 +85,7 @@
               <Component id="jPanel3" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
@@ -144,7 +145,7 @@
                   <Component id="ClientesLbl" alignment="0" max="32767" attributes="0"/>
                   <Component id="EmpleadosLbl" alignment="0" max="32767" attributes="0"/>
                   <Component id="PaquetesLbl" alignment="0" max="32767" attributes="0"/>
-                  <Component id="RutaLbl" alignment="0" pref="190" max="32767" attributes="0"/>
+                  <Component id="RutaLbl" alignment="0" pref="188" max="32767" attributes="0"/>
                   <Component id="EnviosLbl" alignment="0" max="32767" attributes="0"/>
                   <Component id="InicioLbl" alignment="1" max="32767" attributes="0"/>
               </Group>
@@ -334,7 +335,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <EmptySpace pref="38" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
