@@ -31,7 +31,7 @@ public class GuiMenu extends javax.swing.JFrame {
     private GestionEnvios envios;
     private Date fecha = new Date() ;
     private FrmEmpleados frmEmpleado;
-    private FrmCliente frmCliente;
+    private FrmClientes frmCliente;
     private FrmPaquetes frmPaquete;
     private FrmRutaEntrega frmRuta;
     private FrmEnvios frmEnvio;
@@ -579,7 +579,7 @@ public class GuiMenu extends javax.swing.JFrame {
         
          DeskMenu.setEnabled(true);
         DeskMenu.setVisible(true);
-        this.frmCliente = new FrmCliente();
+        this.frmCliente = new FrmClientes();
         this.DeskMenu.add(frmCliente);
         frmCliente.setEnabled(true);
         frmCliente.setVisible(true);
