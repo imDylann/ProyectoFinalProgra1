@@ -4,6 +4,8 @@
  */
 package Clientes;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 
 /**
@@ -13,9 +15,10 @@ import java.util.ArrayList;
 public class ListaCliente {
     
 private ArrayList<Cliente> clientes;
-
+private PropertyChangeSupport support;
 private ListaCliente() {
         this.clientes = new ArrayList<>() ;
+              support = new PropertyChangeSupport(this);
     }
     private static ListaCliente listC;
     public static ListaCliente getInstance(){
@@ -46,5 +49,21 @@ private ListaCliente() {
                     return c;
                  }}
          return null;
+    }
+      public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        support.removePropertyChangeListener(listener);
+    }
+        public int getCantidadClientesNoNulos() {
+        int count = 0;
+        for (Cliente c : clientes) {
+            if (c != null) {
+                count++;
+            }
+        }
+        return count;
     }
 }

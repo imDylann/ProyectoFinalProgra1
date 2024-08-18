@@ -48,7 +48,12 @@ public class GuiMenu extends javax.swing.JFrame {
       rutas = ListaRutasEntrega.getInstance();
       paquetes = ListaPaquete.getInstance();
   
-      
+          ListaCliente.getInstance().addPropertyChangeListener(evt -> {
+            if ("clientes".equals(evt.getPropertyName())) {
+                int cantidadClientes = ListaCliente.getInstance().getCantidadClientesNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes));
+            }
+        });
     }
 
     /**
@@ -583,6 +588,7 @@ public class GuiMenu extends javax.swing.JFrame {
         this.DeskMenu.add(frmCliente);
         frmCliente.setEnabled(true);
         frmCliente.setVisible(true);
+        
     }//GEN-LAST:event_ClientesLblMouseClicked
 
     private void PaquetesLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaquetesLblMouseClicked
@@ -698,6 +704,9 @@ public class GuiMenu extends javax.swing.JFrame {
         timer.start();
     }
 
+    public void actualizarLabel(String nuevoTexto) {
+        this.ClienteCont.setText(nuevoTexto);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ClienteCont;
     private javax.swing.JLabel ClientesLbl;
