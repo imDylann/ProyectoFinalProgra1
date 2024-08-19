@@ -14,19 +14,19 @@ public class Paquete {
     
     private String codigo;
     private String descripcion;
-    private double peso;
-    private Cliente remitente;
-    private Cliente destinatario;
+    private String peso;
+    private String Cremitente;
+    private String Cdestinatario;
     private String estado;
     private final String Almacen ="Almacen";
     private final String Transito = "Transito";
     private final String Completado = "Completo";
-    public Paquete(String codigo, String descripcion, double peso, Cliente remitente, Cliente destinatario) {
+    public Paquete(String codigo, String descripcion, String peso, String remitente, String destinatario) {
         this.codigo = codigo;
         this.descripcion = descripcion;
-        this.peso = peso;
-        this.remitente = remitente;
-        this.destinatario = destinatario;
+        this.peso = peso+"kg";
+        this.Cremitente = remitente;
+        this.Cdestinatario = destinatario;
         this.estado = Almacen;
     }
 
@@ -38,16 +38,16 @@ public class Paquete {
         return descripcion;
     }
 
-    public double getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public Cliente getRemitente() {
-        return remitente;
+    public String getRemitente() {
+        return Cremitente;
     }
 
-    public Cliente getDestinatario() {
-        return destinatario;
+    public String getDestinatario() {
+        return Cdestinatario;
     }
 
     public String getEstado() {
@@ -62,13 +62,13 @@ public class Paquete {
         this.descripcion = descripcion;
     }
 
-    public void setDestinatario(Cliente destinatario) {
-        this.destinatario = destinatario;
+    public void setDestinatario(String destinatario) {
+        this.Cdestinatario = destinatario;
     }
 
     @Override
     public String toString() {
-        return "Paquete{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", peso=" + peso + ", remitente=" + remitente + ", destinatario=" + destinatario + ", estado=" + estado + '}';
+        return "Paquete{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", peso=" + peso + ", remitente=" + Cremitente + ", destinatario=" + Cdestinatario + ", estado=" + estado + '}';
     }
 
     public String getAlmacen() {

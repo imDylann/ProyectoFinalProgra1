@@ -37,7 +37,7 @@ public class ListaPaquete {
         System.out.println("Paquete agregado: " + paquete.toString());
     }
 
-    public boolean actualizarPaquete(String codigo, String descripcion, Cliente destinatario) {
+    public boolean actualizarPaquete(String codigo, String descripcion, String destinatario) {
        
         if (paquetes.get(codigo)!= null) {
             paquetes.get(codigo).setDescripcion(descripcion);

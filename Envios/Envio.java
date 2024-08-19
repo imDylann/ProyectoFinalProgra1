@@ -28,7 +28,7 @@ public class Envio {
         this.ruta = ruta;
         this.fechaEnvio = fechaEnvio;
         this.fechaEntrega = fechaEntrega;
-      this.precio = calcularPrecio(paquete.getPeso());
+     // this.precio = calcularPrecio(paquete.getPeso());
          this.estado = "En almacén";
     }
 

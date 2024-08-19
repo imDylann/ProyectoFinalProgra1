@@ -4,6 +4,14 @@
  */
 package GUI;
 
+import Clientes.ListaCliente;
+import Paquetes.ListaPaquete;
+import Paquetes.Paquete;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Saliim
@@ -13,9 +21,14 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
     /**
      * Creates new form FrmEnvios
      */
+    private ListaPaquete listP;
+    private ListaCliente listC;
+     String cedula;
     public FrmPaquetes() {
         initComponents();
-         DisableAllP();
+         DisableorActiveAllP(false);
+         listP = ListaPaquete.getInstance();
+         listC = ListaCliente.getInstance();
     }
 
     /**
@@ -61,21 +74,41 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         AddLbl.setForeground(new java.awt.Color(255, 255, 255));
         AddLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-new-24.png"))); // NOI18N
         AddLbl.setText("Agregar");
+        AddLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddLblMouseClicked(evt);
+            }
+        });
 
         Deletelbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         Deletelbl.setForeground(new java.awt.Color(255, 255, 255));
         Deletelbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-cancelar-24.png"))); // NOI18N
         Deletelbl.setText("Eliminar");
+        Deletelbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeletelblMouseClicked(evt);
+            }
+        });
 
         ActualizarLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         ActualizarLbl.setForeground(new java.awt.Color(255, 255, 255));
         ActualizarLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-crear-nuevo-24.png"))); // NOI18N
         ActualizarLbl.setText("Actualizar");
+        ActualizarLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ActualizarLblMouseClicked(evt);
+            }
+        });
 
         BuscarLbl.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         BuscarLbl.setForeground(new java.awt.Color(255, 255, 255));
         BuscarLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-google-web-search-24.png"))); // NOI18N
         BuscarLbl.setText("Buscar");
+        BuscarLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BuscarLblMouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,9 +117,19 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
 
         CancelLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CancelLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-delete-24.png"))); // NOI18N
+        CancelLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelLblMouseClicked(evt);
+            }
+        });
 
         listoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/imagenes/icons8-casilla-de-verificación-marcada-24.png"))); // NOI18N
+        listoLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listoLblMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -135,28 +178,29 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         jLabel9.setBackground(new java.awt.Color(204, 204, 204));
         jLabel9.setOpaque(true);
 
-        CodigoLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CodigoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CodigoLbl.setForeground(new java.awt.Color(255, 255, 255));
         CodigoLbl.setText("Codigo:");
 
-        CedulaRLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaRLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CedulaRLbl.setForeground(new java.awt.Color(255, 255, 255));
         CedulaRLbl.setText("Cedula de Remitente:");
 
-        DescripcionLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        DescripcionLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         DescripcionLbl.setForeground(new java.awt.Color(255, 255, 255));
         DescripcionLbl.setText("Descripcion:");
 
-        PesoLbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        PesoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         PesoLbl.setForeground(new java.awt.Color(255, 255, 255));
         PesoLbl.setText("Peso(kg):");
 
-        CedulaDlbl.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaDlbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CedulaDlbl.setForeground(new java.awt.Color(255, 255, 255));
         CedulaDlbl.setText("Cedula del Destinatario:");
 
-        CedulaRTxt.setEditable(false);
         CedulaRTxt.setBackground(new java.awt.Color(204, 204, 204));
+        CedulaRTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaRTxt.setForeground(new java.awt.Color(51, 51, 51));
         CedulaRTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CedulaRTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,13 +210,17 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
 
         CodigoTxt.setBackground(new java.awt.Color(204, 204, 204));
         CodigoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CodigoTxt.setForeground(new java.awt.Color(51, 51, 51));
+        CodigoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         PesoTxt.setBackground(new java.awt.Color(204, 204, 204));
         PesoTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PesoTxt.setForeground(new java.awt.Color(51, 51, 51));
         PesoTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        PesoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        DescripcionTxt.setEditable(false);
         DescripcionTxt.setBackground(new java.awt.Color(204, 204, 204));
+        DescripcionTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DescripcionTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DescripcionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,8 +228,9 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
             }
         });
 
-        CedulaDTxt.setEditable(false);
         CedulaDTxt.setBackground(new java.awt.Color(204, 204, 204));
+        CedulaDTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CedulaDTxt.setForeground(new java.awt.Color(51, 51, 51));
         CedulaDTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         CedulaDTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,61 +244,45 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DescripcionLbl, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(CedulaDlbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(CedulaRLbl)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(CodigoLbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DescripcionLbl)
+                    .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CedulaRLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CedulaDlbl)
+                    .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CedulaRLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CedulaDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 91, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CedulaRLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(CedulaRTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PesoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PesoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CedulaDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CedulaDTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, 360));
@@ -300,31 +333,205 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CedulaDTxtActionPerformed
 
-public void DisableAllP(){
-    
-    this.CodigoLbl.setEnabled(false);
-     this.CodigoLbl.setVisible(false);
-    this.CodigoTxt.setEnabled(false);
-    this.CodigoTxt.setVisible(false);
-    this.DescripcionLbl.setEnabled(false);
-    this.DescripcionLbl.setVisible(false);
-    this.DescripcionTxt.setEnabled(false);
-    this.DescripcionTxt.setVisible(false);
-    this.DescripcionTxt.setEnabled(false);
-    this.DescripcionTxt.setVisible(false);
-     this.PesoLbl.setEnabled(false);
-    this.PesoLbl.setVisible(false);
-    this.PesoTxt.setEnabled(false);
-    this.PesoTxt.setVisible(false);
-    this.CedulaRLbl.setEnabled(false);
-    this.CedulaRLbl.setVisible(false);
-    this.CedulaRTxt.setEnabled(false);
-    this.CedulaRTxt.setVisible(false);
-    this.CedulaDlbl.setEnabled(false);
-    this.CedulaDlbl.setVisible(false);
-     this.CedulaDTxt.setEnabled(false);
-    this.CedulaDTxt.setVisible(false);
+    private void AddLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddLblMouseClicked
+         JTextField textField = new JTextField();
+        Object[] message = {
+            "Ingrese la cédula del cliente al que le pertenece el tramite:", textField
+        };
+        int option = JOptionPane.showConfirmDialog(null, message, "Entrada de Cédula", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION&&!textField.getText().isEmpty()) {
+             cedula = textField.getText();
+            System.out.println("ok1");
+            if(listC.SearchCliente(cedula)!=null){
+                System.out.println("ok2");
+               DisableorActiveAllP(true);
+    }//GEN-LAST:event_AddLblMouseClicked
+     else{
+            JOptionPane.showMessageDialog(null, "Cédula no existente, intente de nuevo", "Alerta", JOptionPane.WARNING_MESSAGE);
+            DisableorActiveAllP(false);
+    }
+}
+}
+    private void DeletelblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeletelblMouseClicked
+            DisableorActiveAllP(false);
+            Clear();
+         JTextField textField = new JTextField();
+        Object[] message = {
+            "Ingrese la cédula del cliente al que le pertenece el tramite:", textField
+        };
+        int option = JOptionPane.showConfirmDialog(null, message, "Entrada de Cédula", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION&&!textField.getText().isEmpty()) {
+            String cedula = textField.getText();
+         
+            if(listC.SearchCliente(cedula)!=null){
+     
+                CodigoLbl.setText("ingrese el codigo del paquete a eliminar:");
+                this.CodigoLbl.setEnabled(true);
+                this.CodigoLbl.setVisible(true);
+                this.CodigoTxt.setEnabled(true);
+                this.CodigoTxt.setVisible(true);
+                
+    }                                   
+     else{
+                
+            JOptionPane.showMessageDialog(null, "Cédula no existente, intente de nuevo", "Alerta", JOptionPane.WARNING_MESSAGE);
+            DisableorActiveAllP(false);
+                         
+    }
+}
+        
+    }//GEN-LAST:event_DeletelblMouseClicked
+
+    private void ActualizarLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ActualizarLblMouseClicked
+        Clear();
+                 JTextField textField = new JTextField();
+        Object[] message = {
+            "Ingrese la cédula del cliente al que le pertenece el tramite:", textField
+        };
+        int option = JOptionPane.showConfirmDialog(null, message, "Entrada de Cédula", JOptionPane.OK_CANCEL_OPTION);
+        if (option == JOptionPane.OK_OPTION&&!textField.getText().isEmpty()) {
+            String cedula = textField.getText();
+         
+            if(listC.SearchCliente(cedula)!=null){
+                this.CodigoLbl.setText("ingrese el codigo del paquete que se va actualizar");
+                this.CodigoLbl.setEnabled(true);
+                this.CodigoLbl.setVisible(true);
+                this.CodigoTxt.setEnabled(true);
+                this.CodigoTxt.setVisible(true);
+                this.DescripcionLbl.setVisible(true);
+                this.DescripcionLbl.setEnabled(true);
+                this.DescripcionTxt.setEnabled(true);
+                this.DescripcionTxt.setVisible(true);
+                this.CedulaRLbl.setText("Cedula del Destinatario:");
+                this.CedulaRLbl.setEnabled(true);
+                this.CedulaRLbl.setVisible(true);
+                 this.CedulaRTxt.setEnabled(true);
+                this.CedulaRTxt.setVisible(true);
+    }                                   
+     else{
+                
+            JOptionPane.showMessageDialog(null, "Cédula no existente, intente de nuevo", "Alerta", JOptionPane.WARNING_MESSAGE);
+            DisableorActiveAllP(false);
+                         
+    }
+        }  
+    }//GEN-LAST:event_ActualizarLblMouseClicked
+
+    private void BuscarLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarLblMouseClicked
+        // TODO add your handling code here:     
+         DisableorActiveAllP(false);
+         Clear();
+         
+        this.CodigoLbl.setText("ingrese el codigo del paquete para buscar:");
+                this.CodigoTxt.setEnabled(true);
+                this.CodigoTxt.setVisible(true);
+                this.CodigoLbl.setVisible(true);
+                this.CodigoLbl.setEnabled(true);                   
+    }//GEN-LAST:event_BuscarLblMouseClicked
+
+    private void listoLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listoLblMouseClicked
+        // TODO add your handling code here:
+      ListoFunc();
+    }//GEN-LAST:event_listoLblMouseClicked
+
+    private void CancelLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelLblMouseClicked
+        // TODO add your handling code here:
+        Clear();
+        DisableorActiveAllP(false);
+    }//GEN-LAST:event_CancelLblMouseClicked
+      
+        
+    public void ListoFunc(){
+          if(!this.CodigoTxt.getText().isEmpty()&&!this.DescripcionTxt.getText().isEmpty()&&!this.PesoTxt.getText().isEmpty()
+                       &&!this.CedulaDTxt.getText().isEmpty()&&!this.CedulaRTxt.getText().isEmpty()){
+                   Paquete p = new Paquete(CodigoTxt.getText(),DescripcionTxt.getText(),PesoTxt.getText()
+                   ,CedulaDTxt.getText(),CedulaRTxt.getText());
+                   listP.agregarPaquete(p); 
+                   listC.SearchCliente(cedula).getPaquetes().agregarPaquete(p);
+                   Clear();
+                   DisableorActiveAllP(false);
+               }else if(this.CodigoLbl.equals("ingrese el codigo del paquete a eliminar:")){
+        
+                   if(!this.CodigoTxt.getText().isEmpty()){
+                       
+                       if(listP.buscarPaquete(this.CodigoTxt.getText())!=null){
+                           if(!listP.buscarPaquete(this.CodigoTxt.getText()).getEstado().equals("Transito")){
+                               try {
+                                   listP.eliminarPaquete(CodigoTxt.getText());
+                                     DisableorActiveAllP(false);
+                                          Clear();
+                               } catch (Exception ex) {
+                                   Logger.getLogger(FrmPaquetes.class.getName()).log(Level.SEVERE, null, ex);
+                               }
+                       }else{
+                                JOptionPane.showMessageDialog(null, "No se puede eliminar un paquete que este en transito", "Alerta", JOptionPane.WARNING_MESSAGE);
+                           }
+                   }else{
+                        JOptionPane.showMessageDialog(null, "Codigo no existente, intente de nuevo o el campo esta vacio", "Alerta", JOptionPane.WARNING_MESSAGE);
+                            this.CodigoTxt.setText("");
+                   }
+               }   
+           
+               }else if(this.CodigoLbl.getText().equals("ingrese el codigo del paquete para buscar:")){ 
+                 
+                   Paquete p = listP.buscarPaquete(this.CodigoTxt.getText());
+                   if(p!=null){
+                       DisableorActiveAllP(true);
+                       this.CodigoTxt.setText(p.getCodigo());
+                       this.DescripcionTxt.setText(p.getDescripcion());
+                       this.CedulaRTxt.setText(p.getRemitente());
+                       this.CedulaDTxt.setText(p.getDestinatario());
+                       
+                        this.PesoTxt.setText(String.valueOf(p.getPeso()));
+                       
+                   }else{
+                        JOptionPane.showMessageDialog(null, "Codigo no existente, intente de nuevo o el campo esta vacio", "Alerta", JOptionPane.WARNING_MESSAGE);
+                        this.CodigoTxt.setText("");
+                   }
+               }else{
+                   if(!this.CodigoTxt.getText().isEmpty()&&!this.CedulaRTxt.getText().isEmpty()&&!this.DescripcionTxt.getText().isEmpty()){
+                       listP.buscarPaquete(CodigoTxt.getText()).setDescripcion(DescripcionTxt.getText());
+                       listP.buscarPaquete(CodigoTxt.getText()).setDestinatario(CedulaRTxt.getText());
+                       Clear();
+                        DisableorActiveAllP(false);
+                   }else{
+                         JOptionPane.showMessageDialog(null, "Para actualizar los campos no pueden estar vacios intente de nuevo", "Alerta", JOptionPane.WARNING_MESSAGE);
+                   }
+               }
+    }
+public void DisableorActiveAllP(boolean x){
+     this.CodigoLbl.setText("Codigo:");
+     this.CedulaRLbl.setText("Cedula del Remitente:");
+    this.CodigoLbl.setEnabled(x);
+     this.CodigoLbl.setVisible(x);
+    this.CodigoTxt.setEnabled(x);
+    this.CodigoTxt.setVisible(x);
+    this.DescripcionLbl.setEnabled(x);
+    this.DescripcionLbl.setVisible(x);
+    this.DescripcionTxt.setEnabled(x);
+    this.DescripcionTxt.setVisible(x);
+    this.DescripcionTxt.setEnabled(x);
+    this.DescripcionTxt.setVisible(x);
+     this.PesoLbl.setEnabled(x);
+    this.PesoLbl.setVisible(x);
+    this.PesoTxt.setEnabled(x);
+    this.PesoTxt.setVisible(x);
+    this.CedulaRLbl.setEnabled(x);
+    this.CedulaRLbl.setVisible(x);
+    this.CedulaRTxt.setEnabled(x);
+    this.CedulaRTxt.setVisible(x);
+    this.CedulaDlbl.setEnabled(x);
+    this.CedulaDlbl.setVisible(x);
+     this.CedulaDTxt.setEnabled(x);
+    this.CedulaDTxt.setVisible(x);
   
+}
+public void Clear(){
+    this.CodigoTxt.setText("");
+    this.DescripcionTxt.setText("");
+    this.CedulaRTxt.setText("");
+    this.CedulaDTxt.setText("");
+    this.PesoTxt.setText("");
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
