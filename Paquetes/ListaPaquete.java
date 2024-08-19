@@ -26,13 +26,11 @@ public class ListaPaquete {
         }
         return listP;
     }
-    // Agregar paquete
     public void agregarPaquete(Paquete paquete) {
         paquetes.put(paquete.getCodigo(), paquete);
         System.out.println("Paquete agregado: " + paquete);
     }
 
-    // Actualizar paquete
     public boolean actualizarPaquete(String codigo, String descripcion, Cliente destinatario) {
        
         if (paquetes.get(codigo)!= null) {
@@ -46,7 +44,6 @@ public class ListaPaquete {
         }
     }
 
-    // Eliminar paquete
     public boolean eliminarPaquete(String codigo) throws Exception {
       
         if (paquetes.get(codigo) != null) {
@@ -64,12 +61,10 @@ public class ListaPaquete {
         return false;
     }
 
-    // Buscar paquete
     public Paquete buscarPaquete(String codigo) {
         return paquetes.get(codigo);
     }
 
-    // Mostrar todos los paquetes
    
         public boolean hayPaqueteEnTransito() {
         for (Paquete paquete : paquetes.values()) {
