@@ -48,10 +48,11 @@ public class GuiMenu extends javax.swing.JFrame {
       rutas = ListaRutasEntrega.getInstance();
       paquetes = ListaPaquete.getInstance();
   
-          ListaCliente.getInstance().addPropertyChangeListener(evt -> {
+        clientes.addPropertyChangeListener(evt -> {
             if ("clientes".equals(evt.getPropertyName())) {
-                int cantidadClientes = ListaCliente.getInstance().getCantidadClientesNoNulos();
-                actualizarLabel(String.valueOf(cantidadClientes));
+                System.out.println("Holaaaa");
+                int cantidadClientes =clientes.getCantidadClientesNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes),"ClienteCont");
             }
         });
     }
@@ -100,7 +101,7 @@ public class GuiMenu extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        tarifaCont = new javax.swing.JLabel();
+        EmpleadoCont = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         DeskMenu = new javax.swing.JDesktopPane();
 
@@ -464,10 +465,10 @@ public class GuiMenu extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Empleados");
 
-        tarifaCont.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        tarifaCont.setForeground(new java.awt.Color(51, 51, 51));
-        tarifaCont.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tarifaCont.setText("0");
+        EmpleadoCont.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        EmpleadoCont.setForeground(new java.awt.Color(51, 51, 51));
+        EmpleadoCont.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EmpleadoCont.setText("0");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -482,7 +483,7 @@ public class GuiMenu extends javax.swing.JFrame {
                         .addGap(0, 16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tarifaCont)
+                        .addComponent(EmpleadoCont)
                         .addGap(43, 43, 43))))
         );
         jPanel12Layout.setVerticalGroup(
@@ -494,7 +495,7 @@ public class GuiMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tarifaCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(EmpleadoCont, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -704,13 +705,23 @@ public class GuiMenu extends javax.swing.JFrame {
         timer.start();
     }
 
-    public void actualizarLabel(String nuevoTexto) {
+    public void actualizarLabel(String nuevoTexto,String NombreLbl) {
+        if(NombreLbl.equals("ClienteCont")){
         this.ClienteCont.setText(nuevoTexto);
+        }
+        else if(NombreLbl.equals("EmpleadoCont")){
+            this.EmpleadoCont.setText(nuevoTexto);
+        }else if(NombreLbl.equals("EnviosCont")){
+            this.EnviosCont.setText(nuevoTexto);
+        }else if(NombreLbl.equals("PaqueteCont")){
+               this.PaqueteCont.setText(nuevoTexto);
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ClienteCont;
     private javax.swing.JLabel ClientesLbl;
     private javax.swing.JDesktopPane DeskMenu;
+    private javax.swing.JLabel EmpleadoCont;
     private javax.swing.JLabel EmpleadosLbl;
     private javax.swing.JLabel EnviosCont;
     private javax.swing.JLabel EnviosLbl;
@@ -745,6 +756,5 @@ public class GuiMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JLabel tarifaCont;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,6 +29,7 @@ private ListaCliente() {
     }
     public void AddCliente(Cliente c){
         clientes.add(c);
+           support.firePropertyChange("clientes", null, clientes);
     }
 
     public boolean DeleteCliente(String id){
@@ -36,6 +37,7 @@ private ListaCliente() {
                 if(c.getCedula().equals(id)){
                     if(!c.getPaquetes().hayPaqueteEnTransito()){
                         clientes.remove(c);
+                           support.firePropertyChange("clientes", null, clientes);
                         return true;
                     }
                 }
