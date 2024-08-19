@@ -28,7 +28,7 @@ public class GuiMenu extends javax.swing.JFrame {
     private ListaEmpleados empleados;
     private ListaRutasEntrega rutas;
     private ListaPaquete paquetes;
-    private GestionEnvios envios;
+    private GestionEnvios listaEnvios;
     private Date fecha = new Date() ;
     private FrmEmpleados frmEmpleado;
     private FrmClientes frmCliente;
@@ -47,14 +47,8 @@ public class GuiMenu extends javax.swing.JFrame {
       empleados = ListaEmpleados.getInstance();
       rutas = ListaRutasEntrega.getInstance();
       paquetes = ListaPaquete.getInstance();
-  
-        clientes.addPropertyChangeListener(evt -> {
-            if ("clientes".equals(evt.getPropertyName())) {
-                System.out.println("Holaaaa");
-                int cantidadClientes =clientes.getCantidadClientesNoNulos();
-                actualizarLabel(String.valueOf(cantidadClientes),"ClienteCont");
-            }
-        });
+  listaEnvios = GestionEnvios.getInstance();
+   CambiarContLbl();                        
     }
 
     /**
@@ -716,6 +710,33 @@ public class GuiMenu extends javax.swing.JFrame {
         }else if(NombreLbl.equals("PaqueteCont")){
                this.PaqueteCont.setText(nuevoTexto);
         }
+    }
+    public void CambiarContLbl(){
+          clientes.addPropertyChangeListener(evt -> {
+            if ("clientes".equals(evt.getPropertyName())) {
+                int cantidadClientes =clientes.getCantidadClientesNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes),"ClienteCont");
+            }
+        });
+                empleados.addPropertyChangeListener(evt -> {
+            if ("empleados".equals(evt.getPropertyName())) {
+                int cantidadClientes =empleados.getCantidadEmpleadosNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes),"EmpleadoCont");
+            }
+        });
+                
+                   paquetes.addPropertyChangeListener(evt -> {
+            if ("paquetes".equals(evt.getPropertyName())) {
+                int cantidadClientes =paquetes.getCantidadPaquetesNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes),"PaqueteCont");
+            }
+        });   
+                   listaEnvios.addPropertyChangeListener(evt -> {
+            if ("listaEnvios".equals(evt.getPropertyName())) {
+                int cantidadClientes =listaEnvios.getCantidadEnviosNoNulos();
+                actualizarLabel(String.valueOf(cantidadClientes),"EnviosCont");
+            }
+        });        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ClienteCont;

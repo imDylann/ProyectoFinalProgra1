@@ -5,7 +5,11 @@
 package Paquetes;
 
 import Clientes.Cliente;
+import Empleados.Empleado;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -13,9 +17,10 @@ import java.util.HashMap;
  */
 public class ListaPaquete {
         private HashMap<String, Paquete> paquetes;
-
+     private PropertyChangeSupport support;
     public ListaPaquete() {
         this.paquetes = new HashMap<>();
+         support = new PropertyChangeSupport(this);
     }
 
     private static ListaPaquete listP;
@@ -28,7 +33,8 @@ public class ListaPaquete {
     }
     public void agregarPaquete(Paquete paquete) {
         paquetes.put(paquete.getCodigo(), paquete);
-        System.out.println("Paquete agregado: " + paquete);
+           support.firePropertyChange("paquetes", null, paquetes);
+        System.out.println("Paquete agregado: " + paquete.toString());
     }
 
     public boolean actualizarPaquete(String codigo, String descripcion, Cliente destinatario) {
@@ -43,6 +49,15 @@ public class ListaPaquete {
             return false;
         }
     }
+       public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        support.removePropertyChangeListener(listener);
+    }
+    // Eliminar paquete
 
     public boolean eliminarPaquete(String codigo) throws Exception {
       
@@ -53,6 +68,7 @@ public class ListaPaquete {
             }
             paquetes.remove(codigo);
             System.out.println("Paquete eliminado: " + codigo);
+            support.firePropertyChange("paquetes", null, paquetes);
             return true;
         } else {
             System.out.println("Paquete no encontrado.");
@@ -74,4 +90,15 @@ public class ListaPaquete {
         }
         return false;
     }
-}
+        
+         public int getCantidadPaquetesNoNulos() {
+             int count = 0;
+           for (Map.Entry<String, Paquete> entry : paquetes.entrySet()) {
+            if (entry.getValue() != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+    }
+
