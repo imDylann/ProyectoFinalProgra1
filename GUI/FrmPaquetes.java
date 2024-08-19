@@ -221,6 +221,7 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
 
         DescripcionTxt.setBackground(new java.awt.Color(204, 204, 204));
         DescripcionTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        DescripcionTxt.setForeground(new java.awt.Color(51, 51, 51));
         DescripcionTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DescripcionTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
