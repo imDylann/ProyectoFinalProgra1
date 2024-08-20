@@ -100,5 +100,10 @@ public class ListaPaquete {
         }
         return count;
     }
+
+    public HashMap<String, Paquete> getPaquetesL() {
+        return paquetes;
+    }
+         
     }
 

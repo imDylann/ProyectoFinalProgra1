@@ -7,6 +7,7 @@ package GUI;
 import Clientes.ListaCliente;
 import Paquetes.ListaPaquete;
 import Paquetes.Paquete;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -362,7 +363,7 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         };
         int option = JOptionPane.showConfirmDialog(null, message, "Entrada de Cédula", JOptionPane.OK_CANCEL_OPTION);
         if (option == JOptionPane.OK_OPTION&&!textField.getText().isEmpty()) {
-            String cedula = textField.getText();
+             cedula = textField.getText();
          
             if(listC.SearchCliente(cedula)!=null){
      
@@ -391,7 +392,7 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
         };
         int option = JOptionPane.showConfirmDialog(null, message, "Entrada de Cédula", JOptionPane.OK_CANCEL_OPTION);
         if (option == JOptionPane.OK_OPTION&&!textField.getText().isEmpty()) {
-            String cedula = textField.getText();
+            cedula = textField.getText();
          
             if(listC.SearchCliente(cedula)!=null){
                 this.CodigoLbl.setText("ingrese el codigo del paquete que se va actualizar");
@@ -459,6 +460,7 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
                            if(!listP.buscarPaquete(this.CodigoTxt.getText()).getEstado().equals("Transito")){
                                try {
                                    listP.eliminarPaquete(CodigoTxt.getText());
+                                    listC.SearchCliente(cedula).getPaquetes().eliminarPaquete(CodigoTxt.getText());
                                      DisableorActiveAllP(false);
                                           Clear();
                                } catch (Exception ex) {
@@ -527,6 +529,7 @@ public void DisableorActiveAllP(boolean x){
     this.CedulaDTxt.setVisible(x);
   
 }
+
 public void Clear(){
     this.CodigoTxt.setText("");
     this.DescripcionTxt.setText("");
@@ -534,6 +537,8 @@ public void Clear(){
     this.CedulaDTxt.setText("");
     this.PesoTxt.setText("");
 }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
     private javax.swing.JLabel AddLbl;

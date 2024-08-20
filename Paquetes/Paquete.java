@@ -68,7 +68,7 @@ public class Paquete {
 
     @Override
     public String toString() {
-        return "Paquete{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", peso=" + peso + ", remitente=" + Cremitente + ", destinatario=" + Cdestinatario + ", estado=" + estado + '}';
+        return "Paquete: " + " codigo: " + codigo + ", descripcion: " + descripcion + ", peso: " + peso + ", remitente: " + Cremitente + ", destinatario: " + Cdestinatario + ", estado: " + estado ;
     }
 
     public String getAlmacen() {
