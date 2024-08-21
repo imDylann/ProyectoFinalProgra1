@@ -42,8 +42,95 @@
         </Property>
       </Properties>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="false"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                          <Component id="CodigoLbl" min="-2" pref="280" max="-2" attributes="0"/>
+                          <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
+                          <Component id="DestinosLbl" min="-2" pref="320" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                          <Component id="CodigoTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                          <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
+                          <Component id="DestinoBox" min="-2" pref="218" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                          <Component id="NombreLbl" min="-2" pref="161" max="-2" attributes="0"/>
+                          <EmptySpace min="144" pref="144" max="-2" attributes="0"/>
+                          <Component id="agregarDestinoLbl" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NombreTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="DescripcionLbl" min="-2" pref="190" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="85" pref="85" max="-2" attributes="0"/>
+                          <Component id="addDestinoTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                          <Component id="DescripcionTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="CodigoLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="DestinosLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="CodigoTxt" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="DestinoBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NombreLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                                  <Component id="agregarDestinoLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="NombreTxt" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                  <Component id="DescripcionLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                                  <Component id="addDestinoTxt" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="DescripcionTxt" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -52,18 +139,13 @@
               <Color blue="33" green="33" red="ff" type="rgb"/>
             </Property>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="846" height="-1"/>
-            </Constraint>
-          </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel1" min="-2" pref="830" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -96,11 +178,6 @@
               <Color blue="4e" green="3e" red="2e" type="rgb"/>
             </Property>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="30" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -111,7 +188,7 @@
                   <Component id="AddLbl" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel2" min="-2" pref="118" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
@@ -120,7 +197,7 @@
                       <Component id="CancelLbl" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="DeleteDestinoLbl" alignment="0" pref="129" max="32767" attributes="0"/>
+                  <Component id="DeleteDestinoLbl" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -278,11 +355,6 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="131" y="30" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -307,11 +379,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Codigo:"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="145" y="70" width="280" height="20"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="CodigoTxt">
           <Properties>
@@ -325,11 +392,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CodigoTxtActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="145" y="100" width="220" height="26"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="NombreLbl">
           <Properties>
@@ -341,11 +403,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="145" y="132" width="161" height="20"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="DescripcionLbl">
           <Properties>
@@ -357,11 +414,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Descripcion:"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="145" y="194" width="190" height="20"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="NombreTxt">
           <Properties>
@@ -375,11 +427,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreTxtActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="145" y="162" width="220" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="DestinosLbl">
           <Properties>
@@ -391,11 +438,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Destinos:"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="460" y="70" width="320" height="20"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="agregarDestinoLbl">
           <Properties>
@@ -407,11 +449,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar Destino:"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="450" y="140" width="-1" height="20"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="addDestinoTxt">
           <Properties>
@@ -425,11 +462,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addDestinoTxtActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="450" y="170" width="220" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JComboBox" name="DestinoBox">
           <Properties>
@@ -449,11 +481,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="450" y="100" width="218" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="DescripcionTxt">
           <Properties>
@@ -467,11 +494,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DescripcionTxtActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="147" y="220" width="220" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
       </SubComponents>
     </Container>

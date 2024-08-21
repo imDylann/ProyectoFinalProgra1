@@ -66,7 +66,6 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
         setRequestFocusEnabled(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
 
@@ -81,14 +80,12 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 846, -1));
 
         jPanel4.setBackground(new java.awt.Color(46, 62, 78));
 
@@ -174,14 +171,14 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             .addComponent(AddLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(ListoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CancelLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(DeleteDestinoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+            .addComponent(DeleteDestinoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,8 +201,6 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
-
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -219,12 +214,9 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 30, -1, -1));
-
         CodigoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         CodigoLbl.setForeground(new java.awt.Color(255, 255, 255));
         CodigoLbl.setText("Codigo:");
-        jPanel1.add(CodigoLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 70, 280, 20));
 
         CodigoTxt.setBackground(new java.awt.Color(204, 204, 204));
         CodigoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -233,17 +225,14 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                 CodigoTxtActionPerformed(evt);
             }
         });
-        jPanel1.add(CodigoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 100, 220, 26));
 
         NombreLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         NombreLbl.setForeground(new java.awt.Color(255, 255, 255));
         NombreLbl.setText("Nombre:");
-        jPanel1.add(NombreLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 132, 161, 20));
 
         DescripcionLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         DescripcionLbl.setForeground(new java.awt.Color(255, 255, 255));
         DescripcionLbl.setText("Descripcion:");
-        jPanel1.add(DescripcionLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 194, 190, 20));
 
         NombreTxt.setBackground(new java.awt.Color(204, 204, 204));
         NombreTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -252,17 +241,14 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                 NombreTxtActionPerformed(evt);
             }
         });
-        jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 162, 220, -1));
 
         DestinosLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         DestinosLbl.setForeground(new java.awt.Color(255, 255, 255));
         DestinosLbl.setText("Destinos:");
-        jPanel1.add(DestinosLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 320, 20));
 
         agregarDestinoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         agregarDestinoLbl.setForeground(new java.awt.Color(255, 255, 255));
         agregarDestinoLbl.setText("Agregar Destino:");
-        jPanel1.add(agregarDestinoLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, -1, 20));
 
         addDestinoTxt.setBackground(new java.awt.Color(204, 204, 204));
         addDestinoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -271,12 +257,10 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                 addDestinoTxtActionPerformed(evt);
             }
         });
-        jPanel1.add(addDestinoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 220, -1));
 
         DestinoBox.setBackground(new java.awt.Color(204, 204, 204));
         DestinoBox.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DestinoBox.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(DestinoBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 218, -1));
 
         DescripcionTxt.setBackground(new java.awt.Color(204, 204, 204));
         DescripcionTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -285,7 +269,77 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
                 DescripcionTxtActionPerformed(evt);
             }
         });
-        jPanel1.add(DescripcionTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 220, 220, -1));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(DestinosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(DestinoBox, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addComponent(agregarDestinoLbl))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)
+                        .addComponent(addDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CodigoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DestinosLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CodigoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DestinoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(agregarDestinoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(NombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addComponent(DescripcionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(addDestinoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)
+                        .addComponent(DescripcionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
