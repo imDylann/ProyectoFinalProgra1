@@ -338,9 +338,10 @@ public class FrmClientes extends javax.swing.JInternalFrame {
         PaquetesLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PaquetesLbl.setText("Paquetes del cliente:");
 
+        PaquetesTxt.setEditable(false);
         PaquetesTxt.setBackground(new java.awt.Color(153, 153, 153));
         PaquetesTxt.setColumns(20);
-        PaquetesTxt.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        PaquetesTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         PaquetesTxt.setRows(5);
         jScrollPane4.setViewportView(PaquetesTxt);
 
