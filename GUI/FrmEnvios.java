@@ -592,6 +592,12 @@ this.ClearTxt();
             }else{
                 JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
             }
+  }else if(CedulaLbl.getText().equals("Numero de Envio a Despachar")){
+      if()
+              listE.despacharEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
+  }else if (CedulaLbl.getText().equals("Numero de Envio a Entregar")){
+       listE.entregarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
+       
   }
     }//GEN-LAST:event_ListoLblActionPerformed
 
