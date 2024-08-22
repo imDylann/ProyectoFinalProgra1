@@ -442,6 +442,7 @@ DisableorActiveAll(false);
            this.NombreTxt.getText(),this.DescripcionTxt.getText());
             listR.agregarRuta(emp);
             emp.agregarDestino(addDestinoTxt.getText());
+            DestinoBox.addItem(addDestinoTxt.getText());
                clearTxt();
                 DisableorActiveAll(false);
              
@@ -451,6 +452,7 @@ DisableorActiveAll(false);
                }
                if(!addDestinoTxt.getText().equals("")){
               listR.buscarRuta(this.CodigoTxt.getText()).agregarDestino(addDestinoTxt.getText());
+                DestinoBox.addItem(addDestinoTxt.getText());
                }
                 DisableorActiveAll(false);
                 clearTxt();
