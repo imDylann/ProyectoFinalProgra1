@@ -98,19 +98,19 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="CedulaLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="CedulaTxt" min="-2" pref="72" max="-2" attributes="0"/>
+                                          <Component id="NumeroEnvioTxt" min="-2" pref="72" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="SalarioLbl2" min="-2" pref="90" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="FechaNTxt" min="-2" pref="220" max="-2" attributes="0"/>
+                                              <Component id="FechaETxt" min="-2" pref="220" max="-2" attributes="0"/>
                                               <Group type="102" attributes="0">
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                       <Component id="CorreoLbl" pref="155" max="32767" attributes="0"/>
-                                                      <Component id="NombreTxt" min="-2" pref="147" max="-2" attributes="0"/>
-                                                      <Component id="CorreoTxt" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="CedulaTxt" min="-2" pref="147" max="-2" attributes="0"/>
+                                                      <Component id="NombreTxt" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="SalarioLbl1" min="-2" pref="90" max="-2" attributes="0"/>
@@ -126,8 +126,8 @@
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="SalarioLbl3" min="-2" pref="90" max="-2" attributes="0"/>
                                               <Component id="SalarioLbl" min="-2" pref="90" max="-2" attributes="0"/>
-                                              <Component id="jComboBox1" pref="202" max="32767" attributes="0"/>
-                                              <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jComboBoxPaquete" pref="202" max="32767" attributes="0"/>
+                                              <Component id="jComboBoxRuta" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
@@ -135,7 +135,7 @@
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField1" min="-2" pref="171" max="-2" attributes="0"/>
+                                                  <Component id="PrecioTxt" min="-2" pref="171" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="SalarioLbl5" min="-2" pref="90" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -171,15 +171,14 @@
                               <Component id="CedulaLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="SalarioLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CedulaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NumeroEnvioTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="SalarioLbl2" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxPaquete" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -188,26 +187,26 @@
                               <Component id="SalarioLbl3" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NombreTxt" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jComboBoxRuta" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="CedulaTxt" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="CorreoLbl" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="CorreoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="SalarioLbl1" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FechaNLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="SalarioLbl4" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="FechaNLbl" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="FechaNTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="FechaETxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PrecioTxt" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="SalarioLbl5" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -467,7 +466,7 @@
             <Property name="text" type="java.lang.String" value="Numero de Envio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CedulaTxt">
+        <Component class="javax.swing.JTextField" name="NumeroEnvioTxt">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -478,7 +477,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CedulaTxtActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NumeroEnvioTxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="NombreLbl">
@@ -492,7 +491,7 @@
             <Property name="text" type="java.lang.String" value="Cedula Cliente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="FechaNTxt">
+        <Component class="javax.swing.JFormattedTextField" name="FechaETxt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -505,7 +504,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaNTxtActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaETxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="FechaNLbl">
@@ -530,7 +529,7 @@
             <Property name="text" type="java.lang.String" value="Nombre Cliente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="CorreoTxt">
+        <Component class="javax.swing.JTextField" name="NombreTxt">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -541,7 +540,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CorreoTxtActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreTxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="SalarioLbl1">
@@ -555,7 +554,7 @@
             <Property name="text" type="java.lang.String" value="(Automatico)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="NombreTxt">
+        <Component class="javax.swing.JFormattedTextField" name="CedulaTxt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -576,7 +575,7 @@
             <Property name="text" type="java.lang.String" value="(Automatico)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="jComboBoxPaquete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -600,7 +599,7 @@
             <Property name="text" type="java.lang.String" value="Ruta:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="jComboBoxRuta">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -624,7 +623,7 @@
             <Property name="text" type="java.lang.String" value="Precio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="PrecioTxt">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -632,7 +631,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrecioTxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="SalarioLbl5">
