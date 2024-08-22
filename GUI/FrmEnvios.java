@@ -512,6 +512,8 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
         this.NombreTxt.setText(this.listC.SearchCliente(id).getNombre());
         this.FechaETxt1.setText(String.valueOf(LocalDate.now()));
           actualizarComboBoxR(this.listR.getRutas());
+          this.EstadoLbl.setVisible(false);
+          this.EstadoTxt.setVisible(false);
         }else{
          JOptionPane.showMessageDialog(null, "Cédula no existente, intente de nuevo", "Alerta", JOptionPane.WARNING_MESSAGE);    
         }
