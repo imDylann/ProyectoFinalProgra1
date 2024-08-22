@@ -61,12 +61,12 @@ public class GestionEnvios {
         return null; // Envío no encontrado
     }
 
-    public void despacharEnvio(int numeroEnvio) {
-        Envio envio = buscarEnvio(numeroEnvio);
-        if (envio != null) {
+    public void despacharEnvio( ) {
+        Envio envio = colaEnvios.poll();
             envio.despachar();
+            
                      support.firePropertyChange("listaEnvios", null, listaEnvios);
-        }
+        
     }
 
     public void entregarEnvio(int numeroEnvio) {
@@ -79,6 +79,7 @@ public class GestionEnvios {
 
     public void cancelarEnvio(int numeroEnvio) {
         Envio envio = buscarEnvio(numeroEnvio);
+        colaEnvios.remove(envio);
         if (envio != null) {
             envio.cancelar();
                      support.firePropertyChange("listaEnvios", null, listaEnvios);
