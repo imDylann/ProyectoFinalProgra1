@@ -509,10 +509,9 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
       DisableorActiveAll(false);
         this.CedulaLbl.setEnabled(true);
          this.CedulaLbl.setVisible(true);
-          this.CedulaLbl.setText("Numero de Envio a Despachar");
+          this.CedulaLbl.setText("Presione listo para despachar!");
            this.NumeroEnvioTxt.setEditable(true);
-        this.NumeroEnvioTxt.setEnabled(true);
-        this.NumeroEnvioTxt.setVisible(true);
+
     }//GEN-LAST:event_DeleteLblMouseClicked
 
     private void ActualizarLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ActualizarLblMouseClicked
@@ -592,12 +591,26 @@ this.ClearTxt();
             }else{
                 JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
             }
-  }else if(CedulaLbl.getText().equals("Numero de Envio a Despachar")){
-      if()
-              listE.despacharEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
+  }else if(CedulaLbl.getText().equals("Presione listo para despachar!")){
+              listE.despacharEnvio();
+              ClearTxt();
+               JOptionPane.showMessageDialog(null, "Envio Despachado!", "completado", JOptionPane.WARNING_MESSAGE);
   }else if (CedulaLbl.getText().equals("Numero de Envio a Entregar")){
+      if(listE.buscarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()))!=null){
        listE.entregarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
-       
+       ClearTxt();
+        JOptionPane.showMessageDialog(null, "Envio Entregado!", "completado", JOptionPane.WARNING_MESSAGE);
+  }else{
+       JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+  }
+  }else if(CedulaLbl.getText().equals("Numero de Envio a Cancelar")){
+          if(listE.buscarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()))!=null){
+       listE.cancelarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
+       ClearTxt();
+        JOptionPane.showMessageDialog(null, "Envio Cancelado!", "completado", JOptionPane.WARNING_MESSAGE);
+  }else{
+       JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+  } 
   }
     }//GEN-LAST:event_ListoLblActionPerformed
 

@@ -64,7 +64,7 @@ public class GestionEnvios {
     public void despacharEnvio() {
         Envio envio = colaEnvios.poll();
             envio.despachar();
-            
+           buscarEnvio(envio.getNumeroEnvio()).despachar();
                      support.firePropertyChange("listaEnvios", null, listaEnvios);
         
     }
