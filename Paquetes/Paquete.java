@@ -24,7 +24,7 @@ public class Paquete {
     public Paquete(String codigo, String descripcion, String peso, String remitente, String destinatario) {
         this.codigo = codigo;
         this.descripcion = descripcion;
-        this.peso = peso+"kg";
+        this.peso = peso;
         this.Cremitente = remitente;
         this.Cdestinatario = destinatario;
         this.estado = Almacen;

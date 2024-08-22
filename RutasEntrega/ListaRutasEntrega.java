@@ -50,5 +50,9 @@ public void agregarRuta(RutaEntrega ruta) {
         return null;
     }
 
+    public HashSet<RutaEntrega> getRutas() {
+        return rutas;
+    }
+
    
 }

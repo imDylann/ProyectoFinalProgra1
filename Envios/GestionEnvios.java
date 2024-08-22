@@ -37,13 +37,13 @@ public class GestionEnvios {
         }return gestionenvios;
     }
 
-   // public void registrarEnvio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
-    //    Envio nuevoEnvio = new Envio(cliente, paquete, ruta, fechaEnvio, fechaEntrega);
-   //     colaEnvios.add(nuevoEnvio);
-    //    listaEnvios.add(nuevoEnvio);
-    //     support.firePropertyChange("listaEnvios", null, listaEnvios);
+    public void registrarEnvio(Envio nuevoEnvio) {
         
-   // }
+        colaEnvios.add(nuevoEnvio);
+       listaEnvios.add(nuevoEnvio);
+        support.firePropertyChange("listaEnvios", null, listaEnvios);
+        
+   }
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         support.addPropertyChangeListener(listener);
     }

@@ -463,9 +463,7 @@ DisableorActiveAll(false);
                 clearTxt();
                 
         }else if(this.CodigoLbl.getText().equals("Ingrese Codigo para buscar:")){
-            
-       
-            
+           
             if(listR.buscarRuta(this.CodigoTxt.getText())!=null){
             RutaEntrega emp = listR.buscarRuta(this.CodigoTxt.getText());
             actualizarComboBox(emp.getDestinos());
@@ -476,9 +474,7 @@ DisableorActiveAll(false);
             agregarDestinoLbl.setEnabled(false);
             agregarDestinoLbl.setVisible(false);
             addDestinoTxt.setEnabled(false);
-            addDestinoTxt.setVisible(false);
-            
-
+            addDestinoTxt.setVisible(false);          
             
 }else{
                   JOptionPane.showMessageDialog(null, "Codigo correcto o inexistente intente ", "informacion incorrecta", JOptionPane.WARNING_MESSAGE); 
