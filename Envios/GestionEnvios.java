@@ -61,7 +61,7 @@ public class GestionEnvios {
         return null; // Envío no encontrado
     }
 
-    public void despacharEnvio( ) {
+    public void despacharEnvio() {
         Envio envio = colaEnvios.poll();
             envio.despachar();
             
@@ -70,20 +70,17 @@ public class GestionEnvios {
     }
 
     public void entregarEnvio(int numeroEnvio) {
-        Envio envio = buscarEnvio(numeroEnvio);
-        if (envio != null) {
-            envio.entregar();
+         buscarEnvio(numeroEnvio).entregar();
             support.firePropertyChange("listaEnvios", null, listaEnvios);
-        }
+        
     }
 
     public void cancelarEnvio(int numeroEnvio) {
-        Envio envio = buscarEnvio(numeroEnvio);
+      Envio envio = buscarEnvio(numeroEnvio);
+              buscarEnvio(numeroEnvio).cancelar();
         colaEnvios.remove(envio);
-        if (envio != null) {
-            envio.cancelar();
                      support.firePropertyChange("listaEnvios", null, listaEnvios);
-        }
+        
     }
 
     public void procesarColaEnvios() {
