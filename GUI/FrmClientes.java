@@ -482,7 +482,8 @@ public class FrmClientes extends javax.swing.JInternalFrame {
      this.EdadLbl.setVisible(false);
    this.EdadLbl.setEnabled(false);
     this.EdadTxt.setVisible(false);
-   this.EdadTxt.setEnabled(false);
+     this.EdadTxt.setEnabled(false);
+    
     }//GEN-LAST:event_AddLblMouseClicked
 
     private void buscarLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscarLblMouseClicked

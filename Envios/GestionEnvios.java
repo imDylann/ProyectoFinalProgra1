@@ -70,6 +70,7 @@ public class GestionEnvios {
     }
 
     public void entregarEnvio(int numeroEnvio) {
+        
          buscarEnvio(numeroEnvio).entregar();
             support.firePropertyChange("listaEnvios", null, listaEnvios);
         
@@ -83,12 +84,8 @@ public class GestionEnvios {
         
     }
 
-    public void procesarColaEnvios() {
-        while (!colaEnvios.isEmpty()) {
-            Envio envio = colaEnvios.poll();
-            System.out.println("Procesando envío: " + envio);
-        }
-    }
+
+    
 
     public List<Envio> getListaEnvios() {
         return listaEnvios;
@@ -96,6 +93,15 @@ public class GestionEnvios {
            public int getCantidadEnviosNoNulos() {
         int count = 0;
         for (Envio c : listaEnvios) {
+            if (c != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+                public int getCantidadEnviosNoNulosQ() {
+        int count = 0;
+        for (Envio c : this.colaEnvios) {
             if (c != null) {
                 count++;
             }

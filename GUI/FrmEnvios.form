@@ -91,40 +91,57 @@
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="NumeroEnvioTxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="CedulaLbl" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="CedulaTxt" min="-2" pref="147" max="-2" attributes="0"/>
-                                              <Component id="NombreLbl" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
-                                              <Component id="FechaNLbl" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
-                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="NombreTxt" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="CorreoLbl" alignment="0" pref="155" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="NumeroEnvioTxt" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="CedulaLbl" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="CedulaTxt" min="-2" pref="147" max="-2" attributes="0"/>
+                                                  <Component id="NombreLbl" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                                                  <Component id="FechaNLbl" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="NombreTxt" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="CorreoLbl" alignment="0" pref="155" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <Component id="FechaETxt" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <Component id="FechaETxt" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBoxPaquete" min="-2" pref="202" max="-2" attributes="0"/>
-                                      <Component id="SalarioLbl" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <Component id="SalarioLbl3" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <Component id="jComboBoxRuta" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
-                                      <Component id="FechaNLbl1" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
-                                      <Component id="SalarioLbl4" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="PrecioTxt" alignment="0" pref="200" max="32767" attributes="0"/>
-                                          <Component id="FechaETxt1" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="SalarioLbl" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="EstadoLbl" min="-2" pref="90" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="SalarioLbl3" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                              <Component id="jComboBoxRuta" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+                                              <Component id="FechaNLbl1" alignment="0" min="-2" pref="179" max="-2" attributes="0"/>
+                                              <Component id="SalarioLbl4" min="-2" pref="90" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="PrecioTxt" alignment="0" pref="200" max="32767" attributes="0"/>
+                                                  <Component id="FechaETxt1" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jComboBoxPaquete" min="-2" pref="202" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="EstadoTxt" min="-2" pref="120" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -150,11 +167,13 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="CedulaLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="SalarioLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="EstadoLbl" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="NumeroEnvioTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jComboBoxPaquete" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="EstadoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -185,9 +204,9 @@
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="PrecioTxt" max="32767" attributes="0"/>
-                              <Component id="FechaETxt" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="PrecioTxt" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                              <Component id="FechaETxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -390,6 +409,7 @@
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CancelLblMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelLblActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="ActualizarLbl1">
@@ -477,22 +497,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cedula Cliente:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JFormattedTextField" name="FechaETxt">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
-            </Property>
-            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-              <Format format="dd MM yyyy" subtype="-1" type="1"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="14" style="1"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaETxtActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="FechaNLbl">
           <Properties>
@@ -628,6 +632,47 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaETxt1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="FechaETxt">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format format="dd/MM/yyyy" subtype="-1" type="1"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FechaETxtActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="EstadoLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Estado:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="EstadoTxt">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EstadoTxtActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

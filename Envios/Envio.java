@@ -28,7 +28,7 @@ public class Envio {
         this.ruta = ruta;
         this.fechaEnvio = LocalDate.now();
         this.fechaEntrega = fechaEntrega;
-        this.precio = calcularPrecio(Double.parseDouble(paquete.getPeso()));
+        this.precio = calcularPrecio(Double.parseDouble(paquete.getPeso().trim().replace(",", ".")));
          this.estado = "En almacén";
     }
 

@@ -446,6 +446,7 @@ DisableorActiveAll(false);
             RutaEntrega emp = new RutaEntrega(this.CodigoTxt.getText(),
            this.NombreTxt.getText(),this.DescripcionTxt.getText());
             listR.agregarRuta(emp);
+             System.out.println( emp.getDescripcion());
             emp.agregarDestino(addDestinoTxt.getText());
             DestinoBox.addItem(addDestinoTxt.getText());
                clearTxt();

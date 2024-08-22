@@ -11,12 +11,18 @@ import Paquetes.ListaPaquete;
 import Paquetes.Paquete;
 import RutasEntrega.ListaRutasEntrega;
 import RutasEntrega.RutaEntrega;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -71,7 +77,6 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
         CedulaLbl = new javax.swing.JLabel();
         NumeroEnvioTxt = new javax.swing.JTextField();
         NombreLbl = new javax.swing.JLabel();
-        FechaETxt = new javax.swing.JFormattedTextField();
         FechaNLbl = new javax.swing.JLabel();
         CorreoLbl = new javax.swing.JLabel();
         NombreTxt = new javax.swing.JTextField();
@@ -83,6 +88,9 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
         PrecioTxt = new javax.swing.JTextField();
         FechaNLbl1 = new javax.swing.JLabel();
         FechaETxt1 = new javax.swing.JFormattedTextField();
+        FechaETxt = new javax.swing.JFormattedTextField();
+        EstadoLbl = new javax.swing.JLabel();
+        EstadoTxt = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -192,6 +200,11 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
                 CancelLblMouseClicked(evt);
             }
         });
+        CancelLbl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelLblActionPerformed(evt);
+            }
+        });
 
         ActualizarLbl1.setBackground(new java.awt.Color(255, 255, 255));
         ActualizarLbl1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -277,15 +290,6 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
         NombreLbl.setForeground(new java.awt.Color(255, 255, 255));
         NombreLbl.setText("Cedula Cliente:");
 
-        FechaETxt.setBackground(new java.awt.Color(204, 204, 204));
-        FechaETxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MM yyyy"))));
-        FechaETxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        FechaETxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FechaETxtActionPerformed(evt);
-            }
-        });
-
         FechaNLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         FechaNLbl.setForeground(new java.awt.Color(255, 255, 255));
         FechaNLbl.setText("Fecha Entrega:");
@@ -345,6 +349,28 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
             }
         });
 
+        FechaETxt.setBackground(new java.awt.Color(204, 204, 204));
+        FechaETxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
+        FechaETxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        FechaETxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FechaETxtActionPerformed(evt);
+            }
+        });
+
+        EstadoLbl.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        EstadoLbl.setForeground(new java.awt.Color(255, 255, 255));
+        EstadoLbl.setText("Estado:");
+
+        EstadoTxt.setEditable(false);
+        EstadoTxt.setBackground(new java.awt.Color(204, 204, 204));
+        EstadoTxt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        EstadoTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadoTxtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -354,35 +380,47 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(NumeroEnvioTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(CedulaLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(2, 2, 2)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(CedulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(FechaNLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(NombreTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(CorreoLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                                            .addComponent(FechaETxt, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(NumeroEnvioTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CedulaLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGap(2, 2, 2)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(CedulaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(FechaNLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(NombreTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(CorreoLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)))))
+                                    .addComponent(FechaETxt, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SalarioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SalarioLbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FechaNLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SalarioLbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(PrecioTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                        .addComponent(FechaETxt1, javax.swing.GroupLayout.Alignment.LEADING)))))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(SalarioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(EstadoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(105, 105, 105))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(SalarioLbl3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBoxRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(FechaNLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SalarioLbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(PrecioTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                                .addComponent(FechaETxt1, javax.swing.GroupLayout.Alignment.LEADING)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jComboBoxPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(EstadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(75, 75, 75)))))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -398,11 +436,13 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CedulaLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SalarioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SalarioLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EstadoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(NumeroEnvioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EstadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NombreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -427,9 +467,9 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(SalarioLbl4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PrecioTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                            .addComponent(FechaETxt))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PrecioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FechaETxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -451,16 +491,13 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NumeroEnvioTxtActionPerformed
 
-    private void FechaETxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaETxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FechaETxtActionPerformed
-
     private void NombreTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreTxtActionPerformed
 
     private void AddLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddLblMouseClicked
-            JTextField textField = new JTextField();
+          this.ClearTxt();
+        JTextField textField = new JTextField();
         Object[] message = {
             "Ingrese la cédula del cliente al que le pertenece el tramite:", textField
         };
@@ -482,7 +519,7 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
  public void actualizarComboBoxR(HashSet<RutaEntrega> e) {
      
         for ( RutaEntrega es : e) {
-            this.jComboBoxRuta.addItem(es.getNombre());
+            this.jComboBoxRuta.addItem(es.getCodigo());
         }
         
     }
@@ -541,6 +578,8 @@ public class FrmEnvios extends javax.swing.JInternalFrame {
 
     private void CancelLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelLblMouseClicked
 this.ClearTxt();
+this.DisableorActiveAll(false);
+
     }//GEN-LAST:event_CancelLblMouseClicked
 
     private void ListoLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListoLblMouseClicked
@@ -553,31 +592,39 @@ this.ClearTxt();
 
     private void jComboBoxPaqueteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxPaqueteItemStateChanged
         // TODO add your handling code here:
+        if(this.jComboBoxPaquete.getSelectedItem()!=null){
        String id = this.jComboBoxPaquete.getSelectedItem().toString();
       Paquete p = this.listP.buscarPaquete(id);
       this.PrecioTxt.setText("₡"+String.valueOf(this.calcularPrecio1(Double.parseDouble(p.getPeso().trim().replace(",", ".")))));
+        }
     }//GEN-LAST:event_jComboBoxPaqueteItemStateChanged
 
     private void ListoLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListoLblActionPerformed
         // TODO add your handling code here:
-         DateTimeFormatter formatter =DateTimeFormatter.ofPattern("dd/MM/yyyy");
         if(NombreLbl.isVisible()){
-     
-      if(LocalDate.parse(this.FechaETxt.getText(),formatter).isBefore(LocalDate.now())){
-      JOptionPane.showMessageDialog(null, "La fecha de entrega no puede ser anterior a la fecha actual", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
-  }else if(listC.SearchCliente(CedulaTxt.getText())==null){
-      JOptionPane.showMessageDialog(null, "El cliente no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
-  }else{
-           Envio envio  = new Envio(listC.SearchCliente(CedulaTxt.getText()),
-                               listP.buscarPaquete(jComboBoxPaquete.getSelectedItem().toString()),
-                               listR.buscarRuta(jComboBoxRuta.getSelectedItem().toString()),LocalDate.parse(this.FechaETxt.getText(),formatter));
-                                listE.registrarEnvio(envio);
-                                this.ClearTxt();
-                                this.DisableorActiveAll(false);
-      JOptionPane.showMessageDialog(null, "Envio Registrado, Codigo :"+listP.buscarPaquete(jComboBoxPaquete.getSelectedItem().toString()).getCodigo(), "A nombre del cliente: "+listC.SearchCliente(CedulaTxt.getText()).getNombre(), JOptionPane.WARNING_MESSAGE); 
+          try {
+              if( isFechaAntesDeHoy(this.FechaETxt.getText())){
+                  JOptionPane.showMessageDialog(null, "La fecha de entrega no puede ser anterior a la fecha actual", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+              }else if(listC.SearchCliente(CedulaTxt.getText())==null){
+                  JOptionPane.showMessageDialog(null, "El cliente no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+              }else{
+                  Envio envio  = new Envio(listC.SearchCliente(CedulaTxt.getText()),
+                          listP.buscarPaquete(jComboBoxPaquete.getSelectedItem().toString()),
+                          listR.buscarRuta(jComboBoxRuta.getSelectedItem().toString()),convertirStringAFecha(this.FechaETxt.getText()));
+                  System.out.println("entro a fecha envio "+this.FechaETxt.getText());
+                  System.out.println(envio.getRuta().getDescripcion());
+                  listE.registrarEnvio(envio);
+                 
+             
+                  JOptionPane.showMessageDialog(null, "Envio Registrado, Codigo : "+envio.getNumeroEnvio(), "A nombre del cliente: "+listC.SearchCliente(CedulaTxt.getText()).getNombre(), JOptionPane.WARNING_MESSAGE);
+                       this.ClearTxt();
+                  this.DisableorActiveAll(false); 
+              }
+          } catch (ParseException ex) {
+              Logger.getLogger(FrmEnvios.class.getName()).log(Level.SEVERE, null, ex);
           }
   }else if(CedulaLbl.getText().equals("Numero de Envio a Buscar")){
-       if(listR.buscarRuta(this.NumeroEnvioTxt.getText())!=null){
+       if(listE.buscarEnvio(Integer.parseInt(this.NumeroEnvioTxt.getText()))!=null){
      
             Envio envio = listE.buscarEnvio(Integer.parseInt(this.NumeroEnvioTxt.getText()));
             this.NumeroEnvioTxt.setText(String.valueOf(envio.getNumeroEnvio()));
@@ -587,32 +634,59 @@ this.ClearTxt();
             FechaETxt1.setText(String.valueOf(envio.getFechaEntrega()));
             jComboBoxPaquete.addItem(envio.getPaquete().getCodigo());
             jComboBoxRuta.addItem(envio.getRuta().getCodigo());
+            this.EstadoTxt.setText(envio.getEstado());
             DisableorActiveAll(true);
             }else{
                 JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
             }
   }else if(CedulaLbl.getText().equals("Presione listo para despachar!")){
-              listE.despacharEnvio();
+                    if(this.listE.getCantidadEnviosNoNulosQ()>0){
+                   listE.despacharEnvio();
               ClearTxt();
                JOptionPane.showMessageDialog(null, "Envio Despachado!", "completado", JOptionPane.WARNING_MESSAGE);
+                    }else{
+                       JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+                    }
   }else if (CedulaLbl.getText().equals("Numero de Envio a Entregar")){
       if(listE.buscarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()))!=null){
+            if(this.listE.getCantidadEnviosNoNulosQ()>0){
        listE.entregarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
        ClearTxt();
         JOptionPane.showMessageDialog(null, "Envio Entregado!", "completado", JOptionPane.WARNING_MESSAGE);
+            }else{
+            JOptionPane.showMessageDialog(null, "El envio no existe en la cola de envios", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+            }
   }else{
-       JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+       JOptionPane.showMessageDialog(null, "El envio no existe en la cola de envios", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
   }
   }else if(CedulaLbl.getText().equals("Numero de Envio a Cancelar")){
+      
           if(listE.buscarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()))!=null){
+              if(this.listE.getCantidadEnviosNoNulosQ()>0){
        listE.cancelarEnvio(Integer.parseInt(NumeroEnvioTxt.getText()));
        ClearTxt();
         JOptionPane.showMessageDialog(null, "Envio Cancelado!", "completado", JOptionPane.WARNING_MESSAGE);
+              }else{
+                        JOptionPane.showMessageDialog(null, "El envio no existe en la cola de envios", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
+              }
   }else{
        JOptionPane.showMessageDialog(null, "El envio no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
   } 
   }
     }//GEN-LAST:event_ListoLblActionPerformed
+
+    private void FechaETxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaETxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FechaETxtActionPerformed
+
+    private void EstadoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EstadoTxtActionPerformed
+
+    private void CancelLblActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelLblActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_CancelLblActionPerformed
 
 public void DisableorActiveAll(boolean bool){
     this.CedulaLbl.setEnabled(bool);
@@ -649,6 +723,10 @@ public void DisableorActiveAll(boolean bool){
     this.FechaNLbl1.setVisible(bool);
      this.FechaETxt1.setEnabled(bool);
     this.FechaETxt1.setVisible(bool);
+    this.EstadoLbl.setVisible(bool);
+      this.EstadoLbl.setEnabled(bool);
+       this.EstadoTxt.setVisible(bool);
+      this.EstadoTxt.setEnabled(bool);
 }
 
 public void ClearTxt(){
@@ -657,13 +735,58 @@ public void ClearTxt(){
     this.NombreTxt.setText("");
     this.FechaETxt.setText("");
     this.PrecioTxt.setText("");
+    this.EstadoTxt.setText("");
     this.jComboBoxPaquete.removeAllItems();
     this.jComboBoxRuta.removeAllItems();
        
 }
+ public LocalDate convertirStringAFecha(String fechaStr) {
+        try {
+            if (fechaStr == null || fechaStr.isEmpty()) {
+                throw new IllegalArgumentException("La fecha no puede estar vacía.");
+            }
+            
+            // Especifica el formato de la fecha si es necesario
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+            
+            // Intenta parsear el String a LocalDate
+            return LocalDate.parse(fechaStr, formatter);
+        } catch (DateTimeParseException e) {
+            System.out.println("Error al parsear la fecha: " + e.getMessage());
+            return null; // O manejar el error según sea necesario
+        }
+    }
   private double calcularPrecio1(double peso) {
         return 2100 + (peso > 1 ? (peso - 1) * 1200 : 0);
     }
+  
+   public static boolean isFechaAntesDeHoy(String fechaTexto) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            // Verifica si el campo de texto no está vacío
+            if (fechaTexto == null || fechaTexto.trim().isEmpty()) {
+                throw new IllegalArgumentException("El campo de fecha está vacío.");
+            }
+
+            // Convierte el texto de la fecha a un objeto Date
+            Date fechaIngresada = formatter.parse(fechaTexto);
+
+            // Obtiene la fecha actual
+            Date fechaActual = new Date();
+
+            // Comprueba si la fecha ingresada es anterior a la fecha actual
+            return fechaIngresada.before(fechaActual);
+
+        }catch (IllegalArgumentException e) {
+            // Maneja el caso de campo de texto vacío u otro error
+            System.out.println("Error: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "El campo de fecha no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        // Captura y maneja el error de parseo de la fecha
+        
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizarLbl;
     private javax.swing.JLabel ActualizarLbl1;
@@ -673,6 +796,8 @@ public void ClearTxt(){
     private javax.swing.JFormattedTextField CedulaTxt;
     private javax.swing.JLabel CorreoLbl;
     private javax.swing.JLabel DeleteLbl;
+    private javax.swing.JLabel EstadoLbl;
+    private javax.swing.JTextField EstadoTxt;
     private javax.swing.JFormattedTextField FechaETxt;
     private javax.swing.JFormattedTextField FechaETxt1;
     private javax.swing.JLabel FechaNLbl;
