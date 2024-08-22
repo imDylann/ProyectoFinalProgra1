@@ -9,7 +9,10 @@ import RutasEntrega.ListaRutasEntrega;
 import RutasEntrega.RutaEntrega;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 
@@ -388,6 +391,8 @@ public class FrmRutaEntrega extends javax.swing.JInternalFrame {
     private void DeleteLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteLblMouseClicked
      clearTxt();
         DisableorActiveAll(false);
+        this.DestinoBox.setEnabled(false);
+        this.DestinoBox.setVisible(false);
        CodigoLbl.setText("Ingrese Codigo para eliminar:");
        this.CodigoLbl.setEnabled(true);
          this.CodigoLbl.setVisible(true);
@@ -458,9 +463,12 @@ DisableorActiveAll(false);
                 clearTxt();
                 
         }else if(this.CodigoLbl.getText().equals("Ingrese Codigo para buscar:")){
+            
+       
+            
             if(listR.buscarRuta(this.CodigoTxt.getText())!=null){
-     
             RutaEntrega emp = listR.buscarRuta(this.CodigoTxt.getText());
+            actualizarComboBox(emp.getDestinos());
             this.CodigoTxt.setText(emp.getCodigo());
             this.NombreTxt.setText(emp.getNombre());
             this.DescripcionTxt.setText(emp.getDescripcion());
@@ -469,9 +477,13 @@ DisableorActiveAll(false);
             agregarDestinoLbl.setVisible(false);
             addDestinoTxt.setEnabled(false);
             addDestinoTxt.setVisible(false);
-            }else{
-                JOptionPane.showMessageDialog(null, "La ruta no existe", "informacion incorrecta", JOptionPane.WARNING_MESSAGE);
-            }
+            
+
+            
+}else{
+                  JOptionPane.showMessageDialog(null, "Codigo correcto o inexistente intente ", "informacion incorrecta", JOptionPane.WARNING_MESSAGE); 
+              }
+          
         }else if(this.CodigoLbl.getText().equals("Ingrese Codigo para eliminar:")){
           
             if(listR.buscarRuta(this.CodigoTxt.getText())!=null){
@@ -519,7 +531,15 @@ public void DisableorActiveAll(boolean x){
     DestinosLbl.setVisible(x);
   
 }
+ public void actualizarComboBox(Set<String> destinos) {
+        // Limpiar el combo box
+        this.DestinoBox.removeAllItems();
 
+        // Recorrer la lista de destinos y agregarlos al combo box
+        for (String destino : destinos) {
+            DestinoBox.addItem(destino);
+        }
+    }
 public void clearTxt(){
     CodigoTxt.setText("");
     NombreTxt.setText("");
