@@ -24,10 +24,12 @@ public class FrmPaquetes extends javax.swing.JInternalFrame {
      */
     private ListaPaquete listP;
     private ListaCliente listC;
+  
      String cedula;
     public FrmPaquetes() {
         initComponents();
          DisableorActiveAllP(false);
+      
          listP = ListaPaquete.getInstance();
          listC = ListaCliente.getInstance();
     }

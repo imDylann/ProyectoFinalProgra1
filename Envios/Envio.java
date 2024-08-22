@@ -21,14 +21,14 @@ public class Envio {
     private double precio;
        private String estado;
 
-    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta, LocalDate fechaEnvio, LocalDate fechaEntrega) {
+    public Envio(Cliente cliente, Paquete paquete, RutaEntrega ruta,LocalDate fechaEntrega) {
         this.numeroEnvio = ++contadorEnvios;
         this.cliente = cliente;
         this.paquete = paquete;
         this.ruta = ruta;
-        this.fechaEnvio = fechaEnvio;
+        this.fechaEnvio = LocalDate.now();
         this.fechaEntrega = fechaEntrega;
-     // this.precio = calcularPrecio(paquete.getPeso());
+        this.precio = calcularPrecio(Double.parseDouble(paquete.getPeso()));
          this.estado = "En almacén";
     }
 
